@@ -22,9 +22,9 @@ const portugueseArtists = [
     "Wet Bed Gang"
 ];
 
-// Músicas na pasta raiz
+// LISTA COMPLETA DE MÚSICAS (36 FAIXAS)
 const songs = [
-    // --- Gerais ---
+    // --- Gerais / Vários ---
     { id: 1, title: "Amanhã De Manhã - Remix", artist: "Doce, André Henriques", duration: "3:24", cover: "imagens/amanha-de-manha.jpg", src: "amanha-de-manha.mp3" },
     { id: 2, title: "Baianá - Original mix", artist: "Rogerson", duration: "3:15", cover: "imagens/baiana.jpg", src: "Baianá - Original mix.mp3" },
     { id: 3, title: "Báilame - Remix", artist: "Nacho, Yandel, Bad Bunny", duration: "3:37", cover: "imagens/bailame.jpg", src: "Báilame - Remix.mp3" },
@@ -44,11 +44,24 @@ const songs = [
     { id: 15, title: "O Mundo Ao Contrário", artist: "Xutos & Pontapés", duration: "4:15", cover: "imagens/xutos.jpg", src: "O Mundo Ao Contrário.mp3" },
     { id: 16, title: "À Minha Maneira", artist: "Xutos & Pontapés", duration: "3:25", cover: "imagens/xutos.jpg", src: "À Minha Maneira.mp3" },
     { id: 17, title: "Circo De Feras", artist: "Xutos & Pontapés", duration: "4:20", cover: "imagens/xutos.jpg", src: "Circo De Feras.mp3" },
+    { id: 18, title: "Contentores", artist: "Xutos & Pontapés", duration: "3:40", cover: "imagens/xutos.jpg", src: "Contentores.mp3" },
+    { id: 19, title: "Dia De S. Receber", artist: "Xutos & Pontapés", duration: "3:10", cover: "imagens/xutos.jpg", src: "Dia De S. Receber.mp3" },
+    { id: 20, title: "Gritos Mudos", artist: "Xutos & Pontapés", duration: "4:05", cover: "imagens/xutos.jpg", src: "Gritos Mudos.mp3" },
+    { id: 21, title: "Não Sou O Único", artist: "Xutos & Pontapés", duration: "3:50", cover: "imagens/xutos.jpg", src: "Não Sou O Único.mp3" },
+    { id: 22, title: "Para Ti Maria", artist: "Xutos & Pontapés", duration: "3:30", cover: "imagens/xutos.jpg", src: "Para Ti Maria.mp3" },
+    { id: 23, title: "A'A'A'A'A'A' (Xutos e Pontapes)", artist: "Xutos & Pontapés", duration: "3:00", cover: "imagens/xutos.jpg", src: "A'A'A'A'A'A' (Xutos e Pontapes).mp3" },
 
     // --- Nuno Ribeiro ---
     { id: 24, title: "Não Deixa", artist: "Nelson Freitas; Nuno Ribeiro", duration: "3:15", cover: "imagens/nuno-ribeiro.jpg", src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3" },
     { id: 25, title: "Imagina", artist: "Nuno Ribeiro", duration: "3:10", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Imagina (SPOTISAVER).mp3" },
+    { id: 26, title: "Longe", artist: "Nuno Ribeiro", duration: "3:20", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Longe (SPOTISAVER).mp3" },
+    { id: 27, title: "Para Além de Ti", artist: "Nuno Ribeiro", duration: "3:05", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Para Além de Ti.mp3" },
+    { id: 28, title: "Por Teu Amor", artist: "Nuno Ribeiro", duration: "3:12", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Por Teu Amor (SPOTISAVER).mp3" },
+    { id: 29, title: "Tarde Demais", artist: "Nuno Ribeiro", duration: "3:18", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Tarde Demais (SPOTISAVER).mp3" },
+    { id: 30, title: "Nascente", artist: "Nuno Ribeiro, AWA", duration: "2:55", cover: "imagens/nuno-ribeiro.jpg", src: "Nascente (with AWA)_spotdown.org.mp3" },
+    { id: 31, title: "Dias de Sol", artist: "Nuno Ribeiro, Calema", duration: "3:25", cover: "imagens/nuno-ribeiro.jpg", src: "Dias de Sol_spotdown.org.mp3" },
     { id: 32, title: "Maria Joana", artist: "Nuno Ribeiro, Calema, Mariza", duration: "3:30", cover: "imagens/nuno-ribeiro.jpg", src: "Maria Joana_spotdown.org.mp3" },
+    { id: 33, title: "Assim", artist: "Nuno Ribeiro, Nick Bander", duration: "3:08", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro, Nick Bander - Assim (Audio Official) - Nuno Ribeiro (128k).mp3" },
 
     // --- Fernando Daniel ---
     { id: 34, title: "Cair", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Cair - Fernando Daniel (128k).mp3" },
@@ -79,7 +92,7 @@ const searchInput = document.getElementById('search-input');
 const btnInicio = document.getElementById('btn-inicio');
 const artistPlaylistsList = document.getElementById('artist-playlists');
 
-// Sidebar
+// Sidebar controls
 const sidebar = document.getElementById('sidebar');
 const sidebarOverlay = document.getElementById('sidebar-overlay');
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
@@ -122,7 +135,7 @@ function renderHomeView() {
     const scrollArtistas = document.getElementById('scroll-artistas');
     const scrollPopulares = document.getElementById('scroll-populares');
 
-    songs.slice(0, 6).forEach(song => {
+    songs.slice(0, 8).forEach(song => {
         scrollDestaques.appendChild(createMusicCard(song));
     });
 
@@ -143,7 +156,7 @@ function renderHomeView() {
         scrollArtistas.appendChild(card);
     });
 
-    songs.slice(6, 15).forEach(song => {
+    songs.slice(8, 20).forEach(song => {
         scrollPopulares.appendChild(createMusicCard(song));
     });
 }
