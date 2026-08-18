@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Meu Player de Música</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome para Ícones -->
@@ -52,14 +52,14 @@
                 </div>
             </header>
 
-            <!-- AQUI É ONDE TUDO ACONTECE (DINÂMICO) -->
+            <!-- CONTEÚDO DINÂMICO (CARROSÉIS) -->
             <div id="content-view">
-                <!-- O JavaScript vai preencher esta área com o layout dinâmico -->
+                <!-- Preenchido via JavaScript -->
             </div>
         </main>
     </div>
 
-    <!-- REPRODUTOR DE ÁUDIO -->
+    <!-- REPRODUTOR DE ÁUDIO INFERIOR -->
     <div class="music-player">
         <div class="player-left">
             <img id="player-cover" src="https://picsum.photos/200" alt="Capa">
@@ -92,7 +92,7 @@
         </div>
     </div>
 
-    <audio id="audio-player"></audio>
+    <audio id="audio-player" playsinline></audio>
     <script src="script.js"></script>
 </body>
 </html>
