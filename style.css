@@ -93,11 +93,6 @@ html, body {
     color: var(--text-secondary);
     font-size: 1.4rem;
     cursor: pointer;
-    transition: color 0.2s;
-}
-
-.close-sidebar-btn:hover {
-    color: var(--text-primary);
 }
 
 .nav-links {
@@ -137,15 +132,6 @@ html, body {
     overflow-y: auto;
 }
 
-#artist-playlists::-webkit-scrollbar {
-    width: 4px;
-}
-
-#artist-playlists::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 4px;
-}
-
 #artist-playlists li {
     color: var(--text-secondary);
     padding: 10px 12px;
@@ -158,7 +144,6 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: all 0.2s;
 }
 
 #artist-playlists li:hover {
@@ -194,12 +179,6 @@ html, body {
     align-items: center;
     gap: 8px;
     backdrop-filter: blur(10px);
-    transition: all 0.2s;
-}
-
-.menu-toggle-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
 }
 
 .search-box {
@@ -225,20 +204,110 @@ html, body {
     color: var(--text-primary);
     outline: none;
     font-size: 0.9rem;
-    transition: background-color 0.2s;
 }
 
-.search-box input:focus {
-    background-color: #333333;
+/* --- SEÇÕES DINÂMICAS & CARROSÉIS (ESTILO SPOTIFY) --- */
+.section-block {
+    margin-bottom: 32px;
 }
 
-#section-title {
-    font-size: 1.5rem;
+.section-block h3 {
+    font-size: 1.3rem;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* --- LISTA DE MÚSICAS --- */
+/* Scroll Horizontal Suave */
+.horizontal-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Esconde barra de scroll no mobile */
+}
+
+/* Card Médio de Música */
+.music-card {
+    min-width: 140px;
+    max-width: 140px;
+    background-color: var(--bg-card);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    scroll-snap-align: start;
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+}
+
+.music-card:active {
+    transform: scale(0.96);
+}
+
+.music-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.music-card h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-card p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+}
+
+/* Card Redondo de Artistas */
+.artist-card {
+    min-width: 110px;
+    max-width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.artist-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 2px solid var(--accent);
+}
+
+.artist-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+/* LISTA DE MÚSICAS P/ PLAYLISTS DE ARTISTA */
 .cards-container {
     display: flex;
     flex-direction: column;
@@ -252,23 +321,6 @@ html, body {
     border-radius: 8px;
     background-color: var(--bg-card);
     cursor: pointer;
-    transition: transform 0.15s, background-color 0.2s;
-}
-
-.song-row:hover {
-    background-color: #282828;
-    transform: translateX(3px);
-}
-
-.song-row.playing {
-    background-color: #2a2a2a;
-    border-left: 4px solid var(--accent);
-}
-
-.song-number {
-    width: 25px;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
 }
 
 .song-row-img {
@@ -290,7 +342,6 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 4px;
 }
 
 .artist-info {
@@ -299,23 +350,6 @@ html, body {
     gap: 6px;
     color: var(--text-secondary);
     font-size: 0.8rem;
-}
-
-.artist-info span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.download-icon {
-    color: var(--accent);
-    font-size: 0.75rem;
-}
-
-.song-duration {
-    color: var(--text-secondary);
-    font-size: 0.85rem;
-    margin-left: 12px;
 }
 
 /* --- REPRODUTOR INFERIOR --- */
@@ -365,7 +399,6 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 2px;
 }
 
 .player-song-info p {
@@ -398,12 +431,7 @@ html, body {
     color: var(--text-secondary);
     font-size: 1.1rem;
     cursor: pointer;
-    transition: color 0.2s, transform 0.1s;
     flex-shrink: 0;
-}
-
-.control-btn:hover {
-    color: var(--text-primary);
 }
 
 .play-btn {
@@ -411,11 +439,7 @@ html, body {
     color: var(--text-primary);
 }
 
-.play-btn:hover {
-    transform: scale(1.05);
-}
-
-/* --- BARRA DE PROGRESSO MELHORADA --- */
+/* BARRA DE TEMPO AUMENTADA P/ TELEMÓVEL */
 .progress-container-box {
     display: flex;
     align-items: center;
@@ -464,13 +488,7 @@ html, body {
     height: 14px;
     background-color: #ffffff;
     border-radius: 50%;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transition: opacity 0.2s, transform 0.1s;
-}
-
-.progress-container:hover .progress-bar::after {
-    opacity: 1;
 }
 
 .player-right {
@@ -479,7 +497,6 @@ html, body {
     justify-content: flex-end;
     flex: 1;
     max-width: 20%;
-    min-width: 0;
 }
 
 .volume-container {
@@ -492,17 +509,12 @@ html, body {
 .volume-container input {
     accent-color: var(--accent);
     width: 80px;
-    cursor: pointer;
 }
 
-/* --- RESPONSIVIDADE (TELEMÓVEL) --- */
+/* --- TELEMÓVEL (ESPECIAL) --- */
 @media (max-width: 768px) {
     .main-content {
-        padding: 16px;
-    }
-
-    .song-number, .song-duration {
-        display: none;
+        padding: 16px 12px;
     }
 
     .player-right {
