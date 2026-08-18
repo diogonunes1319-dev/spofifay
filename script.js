@@ -59,6 +59,7 @@ const songs = [
 // Estado da Aplicação
 let songIndex = 0;
 let isPlaying = false;
+let isDragging = false;
 
 // Elementos DOM
 const contentView = document.getElementById('content-view');
@@ -98,22 +99,19 @@ menuToggleBtn.addEventListener('click', openSidebar);
 closeSidebarBtn.addEventListener('click', closeSidebar);
 sidebarOverlay.addEventListener('click', closeSidebar);
 
-// --- RENDERIZAR PÁGINA INICIAL DINÂMICA (CARROSÉIS) ---
+// RENDERIZAR PÁGINA INICIAL DINÂMICA
 function renderHomeView() {
     contentView.innerHTML = `
-        <!-- Seção: Tocadas Recentemente / Destaques -->
         <div class="section-block">
             <h3><i class="fa-solid fa-fire" style="color: #1db954;"></i> Em Destaque</h3>
             <div class="horizontal-scroll" id="scroll-destaques"></div>
         </div>
 
-        <!-- Seção: Artistas em Tendência -->
         <div class="section-block">
             <h3><i class="fa-solid fa-users" style="color: #1db954;"></i> Artistas Principais</h3>
             <div class="horizontal-scroll" id="scroll-artistas"></div>
         </div>
 
-        <!-- Seção: Populares -->
         <div class="section-block">
             <h3><i class="fa-solid fa-compact-disc" style="color: #1db954;"></i> Mais Ouvidas</h3>
             <div class="horizontal-scroll" id="scroll-populares"></div>
@@ -124,19 +122,15 @@ function renderHomeView() {
     const scrollArtistas = document.getElementById('scroll-artistas');
     const scrollPopulares = document.getElementById('scroll-populares');
 
-    // 1. Destaques (Primeiras 6 músicas)
     songs.slice(0, 6).forEach(song => {
-        const card = createMusicCard(song);
-        scrollDestaques.appendChild(card);
+        scrollDestaques.appendChild(createMusicCard(song));
     });
 
-    // 2. Artistas (Círculos)
     const featuredArtists = ["Xutos & Pontapés", "Nuno Ribeiro", "Fernando Daniel", "Calema", "Syu S"];
     featuredArtists.forEach(artist => {
         const card = document.createElement('div');
         card.classList.add('artist-card');
 
-        // Procura uma imagem de capa de uma música deste artista para o avatar
         const artistSong = songs.find(s => s.artist.toLowerCase().includes(artist.toLowerCase()));
         const imgCover = artistSong ? artistSong.cover : "https://picsum.photos/200";
 
@@ -149,14 +143,11 @@ function renderHomeView() {
         scrollArtistas.appendChild(card);
     });
 
-    // 3. Mais Ouvidas (Restantes músicas)
     songs.slice(6, 15).forEach(song => {
-        const card = createMusicCard(song);
-        scrollPopulares.appendChild(card);
+        scrollPopulares.appendChild(createMusicCard(song));
     });
 }
 
-// Auxiliar para criar Card de Música
 function createMusicCard(song) {
     const card = document.createElement('div');
     card.classList.add('music-card');
@@ -179,7 +170,6 @@ function createMusicCard(song) {
     return card;
 }
 
-// Filtrar por Artista (Lista Vertical Tradicional quando seleciona um artista)
 function filterByArtist(artistName) {
     const cleanArtist = artistName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
     const filtered = songs.filter(s => {
@@ -225,7 +215,6 @@ function filterByArtist(artistName) {
     });
 }
 
-// Menu Lateral de Artistas
 function renderArtistPlaylists() {
     artistPlaylistsList.innerHTML = '';
     portugueseArtists.forEach(artist => {
@@ -239,7 +228,6 @@ function renderArtistPlaylists() {
     });
 }
 
-// Início
 btnInicio.addEventListener('click', (e) => {
     e.preventDefault();
     btnInicio.classList.add('active');
@@ -248,7 +236,6 @@ btnInicio.addEventListener('click', (e) => {
     closeSidebar();
 });
 
-// Pesquisa
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
     if (searchTerm === '') {
@@ -288,7 +275,7 @@ searchInput.addEventListener('input', (e) => {
     });
 });
 
-// Leitor de Áudio
+// LEITOR DE ÁUDIO
 function loadSong(song) {
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
@@ -298,12 +285,15 @@ function loadSong(song) {
 
 function playSong() {
     isPlaying = true;
-    audio.play().then(() => {
-        playBtn.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
-    }).catch(() => {
-        isPlaying = false;
-        playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
-    });
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.then(() => {
+            playBtn.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
+        }).catch(error => {
+            isPlaying = false;
+            playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
+        });
+    }
 }
 
 function pauseSong() {
@@ -349,22 +339,41 @@ audio.addEventListener('timeupdate', (e) => {
     }
 });
 
-// Arrastar Tempo no Telemóvel
-let isDragging = false;
+// ARRASTAR BARRA NO IPHONE (TOUCH EVENTS)
 function setProgress(e) {
-    const width = progressContainer.clientWidth;
-    const clickX = e.touches ? e.touches[0].clientX - progressContainer.getBoundingClientRect().left : e.offsetX;
+    if (e.type.startsWith('touch')) {
+        e.preventDefault();
+    }
+    const rect = progressContainer.getBoundingClientRect();
+    let clientX = e.clientX;
+    
+    if (e.touches && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+    }
+    
+    const clickX = clientX - rect.left;
+    const width = rect.width;
     const duration = audio.duration;
-    if (duration) {
+    
+    if (duration && !isNaN(duration)) {
         let boundedX = Math.max(0, Math.min(clickX, width));
         audio.currentTime = (boundedX / width) * duration;
     }
 }
 
 progressContainer.addEventListener('click', setProgress);
-progressContainer.addEventListener('touchstart', (e) => { isDragging = true; setProgress(e); });
-window.addEventListener('touchmove', (e) => { if (isDragging) setProgress(e); });
-window.addEventListener('touchend', () => { isDragging = false; });
+progressContainer.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    setProgress(e);
+}, { passive: false });
+
+window.addEventListener('touchmove', (e) => {
+    if (isDragging) setProgress(e);
+}, { passive: false });
+
+window.addEventListener('touchend', () => {
+    isDragging = false;
+});
 
 if (volumeSlider) {
     volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value; });
