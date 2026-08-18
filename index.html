@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- Overlay escuro para quando o menu estiver aberto em mobile -->
+    <!-- Overlay escuro para a Sidebar -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <div class="container">
@@ -33,12 +33,12 @@
             <div class="playlists-section">
                 <h3>Playlists de Artistas</h3>
                 <ul id="artist-playlists">
-                    <!-- Gerado dinamicamente no JS -->
+                    <!-- Gerado dinamicamente -->
                 </ul>
             </div>
         </aside>
 
-        <!-- CONTEÚDO PRINCIPAL -->
+        <!-- CONTEÚDO PRINCIPAL DINÂMICO -->
         <main class="main-content">
             <header class="header">
                 <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Abrir Menu">
@@ -52,10 +52,9 @@
                 </div>
             </header>
 
-            <h2 id="section-title">Minhas Músicas</h2>
-
-            <div class="cards-container" id="cards-container">
-                <!-- Lista de Músicas -->
+            <!-- AQUI É ONDE TUDO ACONTECE (DINÂMICO) -->
+            <div id="content-view">
+                <!-- O JavaScript vai preencher esta área com o layout dinâmico -->
             </div>
         </main>
     </div>
