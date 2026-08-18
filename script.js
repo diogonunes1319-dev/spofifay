@@ -44,53 +44,24 @@ const songs = [
     { id: 15, title: "O Mundo Ao Contrário", artist: "Xutos & Pontapés", duration: "4:15", cover: "imagens/xutos.jpg", src: "O Mundo Ao Contrário.mp3" },
     { id: 16, title: "À Minha Maneira", artist: "Xutos & Pontapés", duration: "3:25", cover: "imagens/xutos.jpg", src: "À Minha Maneira.mp3" },
     { id: 17, title: "Circo De Feras", artist: "Xutos & Pontapés", duration: "4:20", cover: "imagens/xutos.jpg", src: "Circo De Feras.mp3" },
-    { id: 18, title: "Não Sou O Único", artist: "Xutos & Pontapés", duration: "4:10", cover: "imagens/xutos.jpg", src: "Não Sou O Único.mp3" },
-    { id: 19, title: "O Homem Do Leme", artist: "Xutos & Pontapés", duration: "4:12", cover: "imagens/xutos.jpg", src: "O Homem Do Leme.mp3" },
-    { id: 20, title: "Para Ti Maria", artist: "Xutos & Pontapés", duration: "3:05", cover: "imagens/xutos.jpg", src: "Para Ti Maria.mp3" },
-    { id: 21, title: "Contentores", artist: "Xutos & Pontapés", duration: "3:50", cover: "imagens/xutos.jpg", src: "Contentores.mp3" },
-    { id: 22, title: "Ai Se Ele Cai", artist: "Xutos & Pontapés", duration: "3:08", cover: "imagens/xutos.jpg", src: "Ai Se Ele Cai.mp3" },
-    { id: 23, title: "A Minha Casinha", artist: "Xutos & Pontapés", duration: "2:20", cover: "imagens/xutos.jpg", src: "A Minha Casinha.mp3" },
 
     // --- Nuno Ribeiro ---
     { id: 24, title: "Não Deixa", artist: "Nelson Freitas; Nuno Ribeiro", duration: "3:15", cover: "imagens/nuno-ribeiro.jpg", src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3" },
     { id: 25, title: "Imagina", artist: "Nuno Ribeiro", duration: "3:10", cover: "imagens/nuno-ribeiro.jpg", src: "Nuno Ribeiro - Imagina (SPOTISAVER).mp3" },
-    { id: 26, title: "Dias Cinzentos", artist: "Nuno Ribeiro", duration: "3:22", cover: "imagens/nuno-ribeiro.jpg", src: "Dias Cinzentos_spotdown.org.mp3" },
-    { id: 27, title: "Rosa (feat. CONAN OSIRIS)", artist: "Nuno Ribeiro, CONAN OSIRIS", duration: "3:05", cover: "imagens/nuno-ribeiro.jpg", src: "Rosa (feat. CONAN OSIRIS)_spotdown.org.mp3" },
-    { id: 28, title: "Não Devia (feat. Loony Johnson)", artist: "Nuno Ribeiro, Loony Johnson", duration: "3:18", cover: "imagens/nuno-ribeiro.jpg", src: "Não Devia (feat. Loony Johnson)_spotdown.org.mp3" },
-    { id: 29, title: "Fujo Contigo (feat. Soraia Ramos)", artist: "Nuno Ribeiro, Soraia Ramos", duration: "3:40", cover: "imagens/nuno-ribeiro.jpg", src: "Fujo Contigo (feat. Soraia Ramos)_spotdown.org.mp3" },
-    { id: 30, title: "Saloia", artist: "Nuno Ribeiro", duration: "2:55", cover: "imagens/nuno-ribeiro.jpg", src: "Saloia_spotdown.org.mp3" },
-    { id: 31, title: "Amor Limbo (feat. Bluay)", artist: "Nuno Ribeiro, Bluay", duration: "3:12", cover: "imagens/nuno-ribeiro.jpg", src: "Amor Limbo (feat. Bluay)_spotdown.org.mp3" },
     { id: 32, title: "Maria Joana", artist: "Nuno Ribeiro, Calema, Mariza", duration: "3:30", cover: "imagens/nuno-ribeiro.jpg", src: "Maria Joana_spotdown.org.mp3" },
-    { id: 33, title: "Essa Mulher", artist: "Nuno Ribeiro", duration: "3:08", cover: "imagens/nuno-ribeiro.jpg", src: "Essa Mulher_spotdown.org.mp3" },
 
     // --- Fernando Daniel ---
     { id: 34, title: "Cair", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Cair - Fernando Daniel (128k).mp3" },
     { id: 35, title: "Casa", artist: "Fernando Daniel", duration: "3:20", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - casa - Fernando Daniel (128k).mp3" },
-    { id: 36, title: "Espera", artist: "Fernando Daniel", duration: "3:48", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Espera - Fernando Daniel (128k).mp3" },
-    { id: 37, title: "Mágoa", artist: "Fernando Daniel", duration: "3:10", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Mágoa - Fernando Daniel (128k).mp3" },
-    { id: 38, title: "Melodia Da Saudade", artist: "Fernando Daniel", duration: "3:35", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Melodia Da Saudade - Fernando Daniel (128k).mp3" },
-    { id: 39, title: "Nada A Perder (feat. Carlão)", artist: "Fernando Daniel, Carlão", duration: "3:12", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Nada A Perder ft. Carlão - Fernando Daniel (128k).mp3" },
-    { id: 40, title: "Nada Mais", artist: "Fernando Daniel", duration: "3:25", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Nada Mais - Fernando Daniel (128k).mp3" },
-    { id: 41, title: "Prometo", artist: "Fernando Daniel", duration: "3:05", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - prometo - Fernando Daniel (128k).mp3" },
-    { id: 42, title: "Raro", artist: "Fernando Daniel", duration: "3:18", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Raro - Fernando Daniel (128k).mp3" },
-    { id: 43, title: "Recomeçar", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Recomeçar - Fernando Daniel (128k).mp3" },
-    { id: 44, title: "Se Eu (feat. Melim)", artist: "Fernando Daniel, Melim", duration: "3:40", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Se Eu ft. Melim - Fernando Daniel (128k).mp3" },
-    { id: 45, title: "Tal Como Sou", artist: "Fernando Daniel", duration: "3:22", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Tal Como Sou - Fernando Daniel (128k).mp3" },
-    { id: 46, title: "Voltas", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Voltas - Fernando Daniel (128k).mp3" },
-    { id: 47, title: "Fim +PRESENTE (II) (feat. Carolina Deslandes)", artist: "Fernando Daniel, Carolina Deslandes", duration: "3:28", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel feat. Carolina Deslandes - Fim +PRESENTE (II) - Fernando Daniel (128k).mp3" },
-    { id: 48, title: "Sem Ti", artist: "Fernando Daniel, Agir", duration: "3:42", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel, Agir - Sem Ti - Fernando Daniel (128k).mp3" },
-    { id: 49, title: "Metade", artist: "Fernando Daniel, Beatriz Rosário", duration: "3:05", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel, Beatriz Rosário - metade - Fernando Daniel (128k).mp3" },
-    { id: 50, title: "Até Voltares", artist: "Jimmy P, Fernando Daniel", duration: "3:33", cover: "imagens/fernando-daniel.jpg", src: "Jimmy P Feat. Fernando Daniel - Até Voltares (Prod. SuaveYouKnow & Mantra) - Jimmy P (128k).mp3" },
-    { id: 51, title: "Voltamos Juntos", artist: "Fernando Daniel", duration: "2:50", cover: "imagens/fernando-daniel.jpg", src: "Voltamos Juntos - Videoclip Oficial - Staples Portugal (128k).mp3" }
+    { id: 36, title: "Espera", artist: "Fernando Daniel", duration: "3:48", cover: "imagens/fernando-daniel.jpg", src: "Fernando Daniel - Espera - Fernando Daniel (128k).mp3" }
 ];
 
 // Estado da Aplicação
 let songIndex = 0;
 let isPlaying = false;
-let currentList = [...songs];
 
 // Elementos DOM
-const cardsContainer = document.getElementById('cards-container');
+const contentView = document.getElementById('content-view');
 const audio = document.getElementById('audio-player');
 const playBtn = document.getElementById('play-btn');
 const prevBtn = document.getElementById('prev-btn');
@@ -105,16 +76,14 @@ const totalDurationEl = document.getElementById('total-duration');
 const volumeSlider = document.getElementById('volume-slider');
 const searchInput = document.getElementById('search-input');
 const btnInicio = document.getElementById('btn-inicio');
-const sectionTitle = document.getElementById('section-title');
 const artistPlaylistsList = document.getElementById('artist-playlists');
 
-// Elementos do Menu Lateral
+// Sidebar
 const sidebar = document.getElementById('sidebar');
 const sidebarOverlay = document.getElementById('sidebar-overlay');
 const menuToggleBtn = document.getElementById('menu-toggle-btn');
 const closeSidebarBtn = document.getElementById('close-sidebar-btn');
 
-// --- LÓGICA DO MENU SLIDER ---
 function openSidebar() {
     sidebar.classList.add('active');
     sidebarOverlay.classList.add('active');
@@ -129,93 +98,194 @@ menuToggleBtn.addEventListener('click', openSidebar);
 closeSidebarBtn.addEventListener('click', closeSidebar);
 sidebarOverlay.addEventListener('click', closeSidebar);
 
-// Carregar Lista de Artistas
+// --- RENDERIZAR PÁGINA INICIAL DINÂMICA (CARROSÉIS) ---
+function renderHomeView() {
+    contentView.innerHTML = `
+        <!-- Seção: Tocadas Recentemente / Destaques -->
+        <div class="section-block">
+            <h3><i class="fa-solid fa-fire" style="color: #1db954;"></i> Em Destaque</h3>
+            <div class="horizontal-scroll" id="scroll-destaques"></div>
+        </div>
+
+        <!-- Seção: Artistas em Tendência -->
+        <div class="section-block">
+            <h3><i class="fa-solid fa-users" style="color: #1db954;"></i> Artistas Principais</h3>
+            <div class="horizontal-scroll" id="scroll-artistas"></div>
+        </div>
+
+        <!-- Seção: Populares -->
+        <div class="section-block">
+            <h3><i class="fa-solid fa-compact-disc" style="color: #1db954;"></i> Mais Ouvidas</h3>
+            <div class="horizontal-scroll" id="scroll-populares"></div>
+        </div>
+    `;
+
+    const scrollDestaques = document.getElementById('scroll-destaques');
+    const scrollArtistas = document.getElementById('scroll-artistas');
+    const scrollPopulares = document.getElementById('scroll-populares');
+
+    // 1. Destaques (Primeiras 6 músicas)
+    songs.slice(0, 6).forEach(song => {
+        const card = createMusicCard(song);
+        scrollDestaques.appendChild(card);
+    });
+
+    // 2. Artistas (Círculos)
+    const featuredArtists = ["Xutos & Pontapés", "Nuno Ribeiro", "Fernando Daniel", "Calema", "Syu S"];
+    featuredArtists.forEach(artist => {
+        const card = document.createElement('div');
+        card.classList.add('artist-card');
+
+        // Procura uma imagem de capa de uma música deste artista para o avatar
+        const artistSong = songs.find(s => s.artist.toLowerCase().includes(artist.toLowerCase()));
+        const imgCover = artistSong ? artistSong.cover : "https://picsum.photos/200";
+
+        card.innerHTML = `
+            <img src="${imgCover}" alt="${artist}" onerror="this.src='https://picsum.photos/200'">
+            <span>${artist}</span>
+        `;
+
+        card.addEventListener('click', () => filterByArtist(artist));
+        scrollArtistas.appendChild(card);
+    });
+
+    // 3. Mais Ouvidas (Restantes músicas)
+    songs.slice(6, 15).forEach(song => {
+        const card = createMusicCard(song);
+        scrollPopulares.appendChild(card);
+    });
+}
+
+// Auxiliar para criar Card de Música
+function createMusicCard(song) {
+    const card = document.createElement('div');
+    card.classList.add('music-card');
+
+    card.innerHTML = `
+        <img src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200'">
+        <h4>${song.title}</h4>
+        <p>${song.artist}</p>
+    `;
+
+    card.addEventListener('click', () => {
+        const index = songs.findIndex(s => s.id === song.id);
+        if (index !== -1) {
+            songIndex = index;
+            loadSong(songs[songIndex]);
+            playSong();
+        }
+    });
+
+    return card;
+}
+
+// Filtrar por Artista (Lista Vertical Tradicional quando seleciona um artista)
+function filterByArtist(artistName) {
+    const cleanArtist = artistName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    const filtered = songs.filter(s => {
+        const songArtistClean = s.artist.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        return songArtistClean.includes(cleanArtist) || cleanArtist.includes(songArtistClean);
+    });
+
+    contentView.innerHTML = `
+        <div class="section-block">
+            <h3>Músicas de ${artistName}</h3>
+            <div class="cards-container" id="artist-songs-container"></div>
+        </div>
+    `;
+
+    const container = document.getElementById('artist-songs-container');
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<p style="color:#b3b3b3;">Nenhuma música encontrada para este artista.</p>`;
+        return;
+    }
+
+    filtered.forEach((song) => {
+        const row = document.createElement('div');
+        row.classList.add('song-row');
+        row.innerHTML = `
+            <img class="song-row-img" src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200'">
+            <div class="song-details">
+                <h4>${song.title}</h4>
+                <div class="artist-info">
+                    <span>${song.artist}</span>
+                </div>
+            </div>
+            <div style="color:#b3b3b3; font-size:0.85rem;">${song.duration}</div>
+        `;
+
+        row.addEventListener('click', () => {
+            songIndex = songs.findIndex(s => s.id === song.id);
+            loadSong(songs[songIndex]);
+            playSong();
+        });
+
+        container.appendChild(row);
+    });
+}
+
+// Menu Lateral de Artistas
 function renderArtistPlaylists() {
     artistPlaylistsList.innerHTML = '';
     portugueseArtists.forEach(artist => {
         const li = document.createElement('li');
         li.innerHTML = `<i class="fa-solid fa-music"></i> This Is ${artist}`;
-        
         li.addEventListener('click', () => {
-            sectionTitle.innerText = `Playlist: ${artist}`;
-            btnInicio.classList.remove('active');
-            
-            const cleanArtist = artist.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-            const filtered = songs.filter(s => {
-                const songArtistClean = s.artist.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-                return songArtistClean.includes(cleanArtist) || cleanArtist.includes(songArtistClean);
-            });
-            
-            loadCards(filtered);
-            closeSidebar(); // Fecha o menu ao escolher um artista
+            filterByArtist(artist);
+            closeSidebar();
         });
-
         artistPlaylistsList.appendChild(li);
-    });
-}
-
-// Renderizar Músicas
-function loadCards(songsToRender = songs) {
-    cardsContainer.innerHTML = '';
-    currentList = songsToRender;
-
-    if (songsToRender.length === 0) {
-        cardsContainer.innerHTML = `<p style="color:#b3b3b3; margin-top:20px;">Nenhuma música encontrada para esta seleção.</p>`;
-        return;
-    }
-
-    songsToRender.forEach((song, index) => {
-        const originalIndex = songs.findIndex(s => s.id === song.id);
-
-        const row = document.createElement('div');
-        row.classList.add('song-row');
-        
-        if (originalIndex === songIndex && isPlaying) {
-            row.classList.add('playing');
-        }
-
-        row.innerHTML = `
-            <div class="song-number">${index + 1}</div>
-            <img class="song-row-img" src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200?random=${originalIndex}'">
-            <div class="song-details">
-                <h4>${song.title}</h4>
-                <div class="artist-info">
-                    <i class="fa-solid fa-circle-down download-icon"></i>
-                    <span>${song.artist}</span>
-                </div>
-            </div>
-            <div class="song-duration">${song.duration}</div>
-        `;
-
-        row.addEventListener('click', () => {
-            songIndex = originalIndex;
-            loadSong(songs[songIndex]);
-            playSong();
-        });
-
-        cardsContainer.appendChild(row);
     });
 }
 
 // Início
 btnInicio.addEventListener('click', (e) => {
     e.preventDefault();
-    sectionTitle.innerText = "Minhas Músicas";
     btnInicio.classList.add('active');
     searchInput.value = '';
-    loadCards(songs);
+    renderHomeView();
     closeSidebar();
 });
 
 // Pesquisa
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
-    const filteredSongs = songs.filter(song => 
+    if (searchTerm === '') {
+        renderHomeView();
+        return;
+    }
+
+    const filtered = songs.filter(song => 
         song.title.toLowerCase().includes(searchTerm) || 
         song.artist.toLowerCase().includes(searchTerm)
     );
 
-    loadCards(filteredSongs);
+    contentView.innerHTML = `
+        <div class="section-block">
+            <h3>Resultados para "${searchTerm}"</h3>
+            <div class="cards-container" id="search-container"></div>
+        </div>
+    `;
+
+    const container = document.getElementById('search-container');
+    filtered.forEach((song) => {
+        const row = document.createElement('div');
+        row.classList.add('song-row');
+        row.innerHTML = `
+            <img class="song-row-img" src="${song.cover}" alt="${song.title}">
+            <div class="song-details">
+                <h4>${song.title}</h4>
+                <div class="artist-info"><span>${song.artist}</span></div>
+            </div>
+        `;
+        row.addEventListener('click', () => {
+            songIndex = songs.findIndex(s => s.id === song.id);
+            loadSong(songs[songIndex]);
+            playSong();
+        });
+        container.appendChild(row);
+    });
 });
 
 // Leitor de Áudio
@@ -224,7 +294,6 @@ function loadSong(song) {
     songArtist.innerText = song.artist;
     coverImg.src = song.cover;
     audio.src = song.src;
-    loadCards(currentList);
 }
 
 function playSong() {
@@ -280,22 +349,30 @@ audio.addEventListener('timeupdate', (e) => {
     }
 });
 
-progressContainer.addEventListener('click', (e) => {
+// Arrastar Tempo no Telemóvel
+let isDragging = false;
+function setProgress(e) {
     const width = progressContainer.clientWidth;
-    const clickX = e.offsetX;
-    if (audio.duration) {
-        audio.currentTime = (clickX / width) * audio.duration;
+    const clickX = e.touches ? e.touches[0].clientX - progressContainer.getBoundingClientRect().left : e.offsetX;
+    const duration = audio.duration;
+    if (duration) {
+        let boundedX = Math.max(0, Math.min(clickX, width));
+        audio.currentTime = (boundedX / width) * duration;
     }
-});
+}
+
+progressContainer.addEventListener('click', setProgress);
+progressContainer.addEventListener('touchstart', (e) => { isDragging = true; setProgress(e); });
+window.addEventListener('touchmove', (e) => { if (isDragging) setProgress(e); });
+window.addEventListener('touchend', () => { isDragging = false; });
 
 if (volumeSlider) {
-    volumeSlider.addEventListener('input', (e) => {
-        audio.volume = e.target.value;
-    });
+    volumeSlider.addEventListener('input', (e) => { audio.volume = e.target.value; });
 }
 
 audio.addEventListener('ended', () => nextBtn.click());
 
-// Inicializar
+// Inicialização
 renderArtistPlaylists();
+renderHomeView();
 loadSong(songs[songIndex]);
