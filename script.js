@@ -53,7 +53,7 @@ const songs = [
     { id: 47, title: "Ai Se Ele Cai", artist: "Xutos & Pontapés", duration: "3:05", cover: "imagens/ai-se-ele-cai.jpg", src: "Ai Se Ele Cai.mp3" },
     { id: 48, title: "A Minha Casinha", artist: "Xutos & Pontapés", duration: "3:30", cover: "imagens/a-minha-casinha.jpg", src: "A Minha Casinha.mp3" },
 
-    // Lista 3 (Novas Músicas / Remixes Spotdown)
+    // Lista 3
     { id: 49, title: "Baianá - Original Mix", artist: "Bakermat", duration: "3:00", cover: "imagens/baiana.jpg", src: "Baianá - Original mix_spotdown.org.mp3" },
     { id: 50, title: "Báilame - Remix", artist: "Nacho", duration: "3:35", cover: "imagens/bailame.jpg", src: "Báilame - Remix_spotdown.org.mp3" },
     { id: 51, title: "La Plena", artist: "Wisin & Yandel", duration: "3:10", cover: "imagens/la-plena.jpg", src: "La Plena_spotdown.org.mp3" },
@@ -66,13 +66,13 @@ const songs = [
     { id: 58, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "Pump It - Radio Edit_spotdown.org.mp3" }
 ];
 
-// ARTISTAS PORTUGUESES (Com Músicas Associadas)
+// ARTISTAS PORTUGUESES
 const artists = [
     { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3] },
     { id: 102, name: "Fábio Lagarto", photo: "fabio_lagarto.jpg", songIds: [4] },
-    { id: 103, name: "Calema", photo: "calema.jpg", songIds: [16, 19] },
+    { id: 103, name: "Calema", photo: "calema.jpg", songIds: [] },
     { id: 104, name: "Nuno Ribeiro", photo: "nuno_ribeiro.jpg", songIds: [10, 19, 22, 44] },
-    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [5, 20, 37, 53] },
+    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [] },
     { id: 106, name: "Xutos & Pontapés", photo: "xutos.jpg", songIds: [11, 12, 13, 15, 21, 42, 43, 46, 47, 48] },
     { id: 110, name: "GNR", photo: "GNR.jpg", songIds: [] },
     { id: 117, name: "Diogo Piçarra", photo: "diogo_piçarra.jpg", songIds: [] },
@@ -88,11 +88,7 @@ const artists = [
 
 // PLAYLISTS
 const playlists = [
-    {
-        id: 1,
-        name: "Portugal",
-        type: "artists"
-    }
+    { id: 1, name: "Portugal", type: "artists" }
 ];
 
 // Estado da Aplicação
@@ -101,7 +97,7 @@ let isPlaying = false;
 let currentList = [...songs];
 let activePlaylistId = null;
 
-// Histórico de Navegação (Setas)
+// Histórico de Navegação
 let navigationHistory = [];
 let historyIndex = -1;
 let isNavigatingHistory = false;
@@ -128,7 +124,15 @@ const btnNavForward = document.getElementById('btn-nav-forward');
 const sectionTitle = document.getElementById('section-title');
 const playlistList = document.getElementById('playlist-list');
 
-// Gestão de Histórico para as Setas
+// Função de Saudação do Spotify
+function getGreeting() {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Bom dia";
+    if (hour < 20) return "Boa tarde";
+    return "Boa noite";
+}
+
+// Histórico de Navegação (Setas)
 function pushStateToHistory(state) {
     if (isNavigatingHistory) return;
     if (historyIndex < navigationHistory.length - 1) {
@@ -147,7 +151,7 @@ function restoreState(state) {
     if (state.viewType === 'home') {
         btnInicio.classList.add('active');
         btnBuscar.classList.remove('active');
-        loadCards(songs);
+        renderHomeView();
     } else if (state.viewType === 'playlist') {
         btnInicio.classList.remove('active');
         btnBuscar.classList.remove('active');
@@ -177,7 +181,116 @@ btnNavForward.addEventListener('click', () => {
     }
 });
 
-// Renderizar Músicas (Formato Lista)
+// VISTA DE INÍCIO ESTILO SPOTIFY
+function renderHomeView() {
+    cardsContainer.className = 'spotify-home';
+    sectionTitle.innerText = getGreeting();
+
+    cardsContainer.innerHTML = `
+        <!-- Quick Access Grid -->
+        <div class="quick-access-grid">
+            <div class="quick-card" id="quick-playlist-pt">
+                <div class="quick-card-img"><i class="fa-solid fa-music"></i></div>
+                <span>Portugal (Artistas)</span>
+            </div>
+            <div class="quick-card" id="quick-artist-xutos">
+                <img src="xutos.jpg" onerror="this.src='https://picsum.photos/100?random=1'">
+                <span>Xutos & Pontapés</span>
+            </div>
+            <div class="quick-card" id="quick-artist-fd">
+                <img src="fernando_daniel.jpg" onerror="this.src='https://picsum.photos/100?random=2'">
+                <span>Fernando Daniel</span>
+            </div>
+            <div class="quick-card" id="quick-artist-nr">
+                <img src="nuno_ribeiro.jpg" onerror="this.src='https://picsum.photos/100?random=3'">
+                <span>Nuno Ribeiro</span>
+            </div>
+        </div>
+
+        <!-- Secção 1: Músicas em Destaque -->
+        <div class="home-section">
+            <div class="section-header">
+                <h2>Músicas Recomendadas</h2>
+            </div>
+            <div class="media-grid" id="featured-songs-grid"></div>
+        </div>
+
+        <!-- Secção 2: Artistas Populares -->
+        <div class="home-section">
+            <div class="section-header">
+                <h2>Artistas Populares</h2>
+            </div>
+            <div class="media-grid" id="featured-artists-grid"></div>
+        </div>
+    `;
+
+    // Eventos nos Quick Cards
+    document.getElementById('quick-playlist-pt').addEventListener('click', () => openPlaylist(playlists[0]));
+    document.getElementById('quick-artist-xutos').addEventListener('click', () => openArtistView(artists.find(a => a.id === 106)));
+    document.getElementById('quick-artist-fd').addEventListener('click', () => openArtistView(artists.find(a => a.id === 118)));
+    document.getElementById('quick-artist-nr').addEventListener('click', () => openArtistView(artists.find(a => a.id === 104)));
+
+    // Preencher Músicas Recomendadas
+    const songsGrid = document.getElementById('featured-songs-grid');
+    const sampleSongs = songs.slice(0, 6);
+    sampleSongs.forEach((song) => {
+        const originalIndex = songs.findIndex(s => s.id === song.id);
+        const card = document.createElement('div');
+        card.className = 'spotify-card';
+        card.innerHTML = `
+            <div class="card-img-container">
+                <img src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200?random=${song.id}'">
+                <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div class="card-info">
+                <h4>${song.title}</h4>
+                <p>${song.artist}</p>
+            </div>
+        `;
+        card.addEventListener('click', () => {
+            songIndex = originalIndex;
+            loadSong(songs[songIndex]);
+            playSong();
+        });
+        songsGrid.appendChild(card);
+    });
+
+    // Preencher Artistas Populares
+    const artistsGrid = document.getElementById('featured-artists-grid');
+    const sampleArtists = artists.slice(0, 6);
+    sampleArtists.forEach((artist) => {
+        const card = document.createElement('div');
+        card.className = 'spotify-card artist-style';
+        card.innerHTML = `
+            <div class="card-img-container">
+                <img src="${artist.photo}" alt="${artist.name}" onerror="this.src='https://picsum.photos/200?random=${artist.id}'">
+                <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+            </div>
+            <div class="card-info">
+                <h4>${artist.name}</h4>
+                <p>Artista</p>
+            </div>
+        `;
+        card.addEventListener('click', () => openArtistView(artist));
+        artistsGrid.appendChild(card);
+    });
+}
+
+// Abrir vista de artista
+function openArtistView(artist) {
+    if (!artist) return;
+    sectionTitle.innerText = artist.name;
+    const artistSongs = songs.filter(s => artist.songIds.includes(s.id));
+    pushStateToHistory({
+        viewType: 'artist',
+        title: artist.name,
+        activePlaylistId: activePlaylistId,
+        artistSongIds: artist.songIds
+    });
+    loadCards(artistSongs);
+}
+
+// Renderizar Músicas em Tabela/Lista (Usado em procuras ou ao clicar num artista)
 function loadCards(songsToRender = songs) {
     cardsContainer.className = 'song-list';
     cardsContainer.innerHTML = '';
@@ -221,7 +334,7 @@ function loadCards(songsToRender = songs) {
     });
 }
 
-// Renderizar Artistas (Grelha Responsiva)
+// Renderizar Grelha de Artistas (Na Playlist Portugal)
 function renderArtistsGrid(artistsToRender = artists) {
     cardsContainer.className = 'artists-grid';
     cardsContainer.innerHTML = '';
@@ -243,23 +356,13 @@ function renderArtistsGrid(artistsToRender = artists) {
             </div>
         `;
 
-        card.addEventListener('click', () => {
-            sectionTitle.innerText = artist.name;
-            const artistSongs = songs.filter(s => artist.songIds.includes(s.id));
-            pushStateToHistory({
-                viewType: 'artist',
-                title: artist.name,
-                activePlaylistId: activePlaylistId,
-                artistSongIds: artist.songIds
-            });
-            loadCards(artistSongs);
-        });
+        card.addEventListener('click', () => openArtistView(artist));
 
         cardsContainer.appendChild(card);
     });
 }
 
-// Renderizar Playlists na Sidebar
+// Sidebar e Playlists
 function renderPlaylists() {
     playlistList.innerHTML = '';
     
@@ -278,7 +381,6 @@ function renderPlaylists() {
     });
 }
 
-// Abrir Playlist
 function openPlaylist(playlist) {
     activePlaylistId = playlist.id;
     sectionTitle.innerText = playlist.name;
@@ -298,26 +400,24 @@ function openPlaylist(playlist) {
     renderPlaylists();
 }
 
-// Botão Início
+// Botões de Topo
 btnInicio.addEventListener('click', (e) => {
     e.preventDefault();
     activePlaylistId = null;
-    sectionTitle.innerText = "Minhas Músicas";
     btnInicio.classList.add('active');
     btnBuscar.classList.remove('active');
     searchInput.value = '';
 
     pushStateToHistory({
         viewType: 'home',
-        title: "Minhas Músicas",
+        title: getGreeting(),
         activePlaylistId: null
     });
 
-    loadCards(songs);
+    renderHomeView();
     renderPlaylists();
 });
 
-// Botão Buscar
 btnBuscar.addEventListener('click', (e) => {
     e.preventDefault();
     btnInicio.classList.remove('active');
@@ -328,6 +428,13 @@ btnBuscar.addEventListener('click', (e) => {
 // Pesquisa
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
+
+    if (!searchTerm) {
+        if (btnInicio.classList.contains('active')) {
+            renderHomeView();
+        }
+        return;
+    }
 
     if (activePlaylistId === 1 && cardsContainer.classList.contains('artists-grid')) {
         const filteredArtists = artists.filter(a => a.name.toLowerCase().includes(searchTerm));
@@ -341,7 +448,7 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
-// Player e Controlos de Áudio
+// Player Audio
 function loadSong(song) {
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
@@ -424,13 +531,16 @@ audio.addEventListener('ended', () => {
     nextBtn.click();
 });
 
-// Inicialização
+// Inicialização Direta no Início Estilo Spotify
 renderPlaylists();
 loadSong(songs[songIndex]);
 
-// Estado Inicial do Histórico
+btnInicio.classList.add('active');
+btnBuscar.classList.remove('active');
+renderHomeView();
+
 pushStateToHistory({
     viewType: 'home',
-    title: "Minhas Músicas",
+    title: getGreeting(),
     activePlaylistId: null
 });

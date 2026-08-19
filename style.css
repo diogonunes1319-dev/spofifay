@@ -1,123 +1,148 @@
+/* ==========================================================
+   1. RESET & CONFIGURAÇÃO GERAL
+   ========================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: #000;
+    color: #fff;
 }
 
 body {
-    background-color: #000000;
-    color: #ffffff;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/* ==========================================================
+   2. ESTRUTURA PRINCIPAL (DESKTOP)
+   ========================================================== */
+.main-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 90px); /* Desconta a altura do Player */
     overflow: hidden;
 }
 
-.container {
-    display: flex;
-    flex: 1;
-    height: calc(100vh - 90px);
-}
-
-/* Sidebar */
+/* Sidebar / Barra Lateral */
 .sidebar {
     width: 240px;
-    background-color: #000000;
-    padding: 24px 12px;
+    background-color: #000;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 8px;
+}
+
+.logo-container i {
+    font-size: 28px;
+    color: #1db954;
+}
+
+.nav-links, .playlist-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fff;
+}
+
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid #282828;
+}
+
+.playlists-header {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-left: 8px;
+}
+
+.playlist-links li {
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-links li:hover, .playlist-links li.active-playlist {
+    color: #fff;
+}
+
+/* Área de Conteúdo */
+.content {
+    flex: 1;
+    background: linear-gradient(to bottom, #1e1e1e 0%, #121212 300px);
+    overflow-y: auto;
+    padding: 16px 32px 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.logo {
+/* ==========================================================
+   3. CABEÇALHO SUPERIOR (TOP-BAR CORRIGIDO)
+   ========================================================== */
+.top-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 20px;
-    font-weight: bold;
-    padding-left: 12px;
-}
-
-.logo i {
-    font-size: 30px;
-}
-
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.nav-menu a {
-    color: #b3b3b3;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 0 12px;
-    transition: color 0.2s ease;
-}
-
-.nav-menu a:hover, .nav-menu a.active {
-    color: #ffffff;
-}
-
-.playlists {
-    margin-top: 10px;
-    border-top: 1px solid #282828;
-    padding-top: 16px;
-    overflow-y: auto;
-}
-
-.playlists ul {
-    list-style: none;
-}
-
-.playlists li {
-    color: #b3b3b3;
-    padding: 8px 12px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.playlists li:hover, .playlists li.active-playlist {
-    color: #ffffff;
-    font-weight: bold;
-}
-
-/* Conteúdo Principal */
-.main-content {
-    flex: 1;
-    background: linear-gradient(to bottom, #1e1e1e, #121212);
-    overflow-y: auto;
-    border-radius: 8px;
-    margin: 8px 8px 8px 0;
-}
-
-.topbar {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 16px 32px;
-    background-color: rgba(0,0,0,0.5);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .nav-buttons {
     display: flex;
-    gap: 16px;
+    gap: 12px;
 }
 
-.btn-circle {
-    background-color: #000000;
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0.7);
     border: none;
-    color: #ffffff;
+    color: #fff;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -125,155 +150,238 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14px;
 }
 
-.search-box {
+.nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.search-bar {
     position: relative;
-    width: 300px;
+    flex: 1;
+    max-width: 360px;
 }
 
-.search-box i {
+.search-bar i {
     position: absolute;
-    left: 12px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
     color: #b3b3b3;
 }
 
-.search-box input {
+.search-bar input {
     width: 100%;
-    padding: 10px 12px 10px 36px;
+    padding: 10px 16px 10px 40px;
     border-radius: 50px;
     border: none;
     background-color: #242424;
-    color: #ffffff;
+    color: #fff;
     font-size: 14px;
     outline: none;
 }
 
-.user-menu {
+.search-bar input:focus {
+    box-shadow: 0 0 0 2px #fff;
+}
+
+.user-profile {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.btn-upgrade {
-    background-color: #ffffff;
-    color: #000000;
+.premium-btn {
+    background-color: #fff;
+    color: #000;
     border: none;
     padding: 8px 16px;
-    border-radius: 50px;
-    font-weight: bold;
+    border-radius: 20px;
+    font-weight: 700;
     font-size: 14px;
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.profile-pic {
-    background-color: #000000;
+.premium-btn:hover {
+    transform: scale(1.04);
+}
+
+.profile-icon {
+    background-color: #000;
     width: 32px;
     height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.content {
-    padding: 20px 32px;
+.page-title {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 8px;
 }
 
-.content h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
+/* ==========================================================
+   4. ESTILOS SPOTIFY HOMEPAGE (CARDS E GRELHAS)
+   ========================================================== */
+.spotify-home {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
 }
 
-/* GRELHA DE ARTISTAS RESPONSIVA */
-.artists-grid {
+.quick-access-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 24px;
-    margin-top: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
 }
 
-.artist-card {
+.quick-card {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 64px;
+}
+
+.quick-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.quick-card-img {
+    width: 64px;
+    height: 64px;
+    background: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #1db954;
+}
+
+.quick-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.quick-card span {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0 16px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.spotify-card {
     background-color: #181818;
     padding: 16px;
     border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: left;
-    cursor: pointer;
     position: relative;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.artist-card:hover {
+.spotify-card:hover {
     background-color: #282828;
 }
 
-.artist-card-img-wrapper {
+.card-img-container {
     position: relative;
     width: 100%;
     padding-top: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
-.artist-card img {
+.card-img-container img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
 }
 
-.artist-card .play-btn-hover {
+.artist-style .card-img-container img {
+    border-radius: 50%;
+}
+
+.card-play-btn {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    width: 48px;
-    height: 48px;
-    background-color: #1db954;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background-color: #1db954;
+    border: none;
+    color: #000;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
-    font-size: 18px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     opacity: 0;
     transform: translateY(8px);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
-.artist-card:hover .play-btn-hover {
+.spotify-card:hover .card-play-btn {
     opacity: 1;
     transform: translateY(0);
 }
 
-.artist-card-info {
-    width: 100%;
-}
-
-.artist-card h4 {
-    font-size: 16px;
+.card-info h4 {
+    color: #fff;
+    font-size: 14px;
     font-weight: 700;
-    color: #ffffff;
     margin-bottom: 4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.artist-card p {
-    font-size: 13px;
+.card-info p {
     color: #a7a7a7;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* LISTA DE MÚSICAS EM LINHA */
+/* ==========================================================
+   5. LISTA DE MÚSICAS & GRELHAS
+   ========================================================== */
 .song-list {
     display: flex;
     flex-direction: column;
@@ -281,7 +389,8 @@ body {
 }
 
 .song-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 40px 50px 1fr 60px;
     align-items: center;
     padding: 8px 16px;
     border-radius: 4px;
@@ -294,13 +403,16 @@ body {
 }
 
 .song-row.playing {
+    background-color: rgba(29, 185, 84, 0.2);
+}
+
+.song-row.playing .song-details h4 {
     color: #1db954;
 }
 
 .song-number {
-    width: 30px;
-    font-size: 14px;
     color: #b3b3b3;
+    font-size: 14px;
 }
 
 .song-row-img {
@@ -308,66 +420,129 @@ body {
     height: 40px;
     border-radius: 4px;
     object-fit: cover;
-    margin-right: 16px;
 }
 
 .song-details {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .song-details h4 {
-    font-size: 15px;
-    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .artist-info {
-    font-size: 13px;
-    color: #b3b3b3;
     display: flex;
     align-items: center;
     gap: 6px;
-}
-
-.download-icon {
-    color: #1db954;
+    color: #b3b3b3;
     font-size: 12px;
 }
 
-.song-duration {
-    font-size: 14px;
-    color: #b3b3b3;
+.download-icon {
+    font-size: 11px;
+    color: #1db954;
 }
 
-/* Player Fixo */
-.player {
+.song-duration {
+    color: #b3b3b3;
+    font-size: 13px;
+    text-align: right;
+}
+
+/* Grelha de Artistas */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.artist-card {
+    background-color: #181818;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.artist-card:hover {
+    background-color: #282828;
+}
+
+.artist-card-img-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
+}
+
+.artist-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.play-btn-hover {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #1db954;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.artist-card:hover .play-btn-hover {
+    opacity: 1;
+}
+
+/* ==========================================================
+   6. PLAYER FLUTUANTE INFERIOR
+   ========================================================== */
+.player-bar {
     height: 90px;
-    background-color: #000000;
+    background-color: #000;
     border-top: 1px solid #282828;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0 16px;
+    position: relative;
+    z-index: 1000;
 }
 
-.song-info {
+.now-playing {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     width: 30%;
 }
 
-.song-info img {
+.now-playing img {
     width: 56px;
     height: 56px;
     border-radius: 4px;
     object-fit: cover;
 }
 
-.song-info h4 {
+.track-info h4 {
     font-size: 14px;
+    color: #fff;
 }
 
-.song-info p {
+.track-info p {
     font-size: 12px;
     color: #b3b3b3;
 }
@@ -386,7 +561,7 @@ body {
     gap: 16px;
 }
 
-.control-buttons button {
+.control-btn {
     background: none;
     border: none;
     color: #b3b3b3;
@@ -394,25 +569,30 @@ body {
     cursor: pointer;
 }
 
-.control-buttons button:hover {
-    color: #ffffff;
+.control-btn:hover {
+    color: #fff;
 }
 
-.play-pause-btn {
-    font-size: 32px !important;
-    color: #ffffff !important;
+#play-btn {
+    font-size: 32px;
+    color: #fff;
 }
 
-.progress-bar-container {
+.progress-wrapper {
     display: flex;
     align-items: center;
     gap: 8px;
     width: 100%;
-    font-size: 11px;
-    color: #b3b3b3;
+    max-width: 500px;
 }
 
-.progress-bar {
+.progress-wrapper span {
+    font-size: 11px;
+    color: #b3b3b3;
+    width: 30px;
+}
+
+.progress-bar-container {
     flex: 1;
     height: 4px;
     background-color: #4d4d4d;
@@ -421,18 +601,18 @@ body {
     position: relative;
 }
 
-.progress {
+.progress-bar-fill {
     height: 100%;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 2px;
     width: 0%;
 }
 
-.progress-bar:hover .progress {
+.progress-bar-container:hover .progress-bar-fill {
     background-color: #1db954;
 }
 
-.volume-controls {
+.volume-container {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -440,12 +620,75 @@ body {
     justify-content: flex-end;
 }
 
-.volume-controls input {
+.volume-slider {
+    width: 100px;
     accent-color: #1db954;
-    cursor: pointer;
 }
 
-.no-results {
-    color: #b3b3b3;
-    margin-top: 20px;
+/* ==========================================================
+   7. RESPONSIVIDADE TELEMÓVEL
+   ========================================================== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .sidebar-divider, .playlists-header {
+        display: none;
+    }
+
+    .nav-links, .playlist-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-links a, .playlist-links li {
+        background-color: #242424;
+        padding: 6px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+    }
+
+    .user-profile {
+        display: none;
+    }
+
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .media-grid, .artists-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .player-bar {
+        height: auto;
+        padding: 12px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .now-playing, .player-controls {
+        width: 100%;
+    }
+
+    .volume-container {
+        display: none;
+    }
 }

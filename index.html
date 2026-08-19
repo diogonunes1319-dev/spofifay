@@ -1,97 +1,119 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Meu Spotify Clone</title>
-    <!-- Ícones do FontAwesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Web</title>
+    <!-- FontAwesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Sidebar / Bottom Navigation em Mobile -->
+    <div class="main-container">
+        <!-- Sidebar / Barra Lateral -->
         <aside class="sidebar">
-            <div class="logo">
+            <div class="logo-container">
                 <i class="fa-brands fa-spotify"></i>
                 <span>Spotify</span>
             </div>
-            <nav class="nav-menu">
-                <a href="#" id="btn-inicio" class="active">
-                    <i class="fa-solid fa-house"></i> 
-                    <span>Início</span>
-                </a>
-                <a href="#" id="btn-buscar">
-                    <i class="fa-solid fa-magnifying-glass"></i> 
-                    <span>Buscar</span>
-                </a>
-            </nav>
-            <div class="playlists">
-                <ul id="playlist-list">
-                    <!-- Playlists inseridas via JS -->
-                </ul>
-            </div>
+
+            <ul class="nav-links">
+                <li><a href="#" id="btn-inicio" class="active"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="#" id="btn-buscar"><i class="fa-solid fa-magnifying-glass"></i> Buscar</a></li>
+            </ul>
+
+            <hr class="sidebar-divider">
+
+            <div class="playlists-header">Playlists</div>
+            <ul class="playlist-links" id="playlist-list">
+                <!-- As playlists serão inseridas dinamicamente aqui pelo JavaScript -->
+            </ul>
         </aside>
 
         <!-- Conteúdo Principal -->
-        <main class="main-content">
-            <header class="topbar">
+        <main class="content">
+            <!-- Cabeçalho do Topo Alinhado -->
+            <header class="top-bar">
                 <div class="nav-buttons">
-                    <button class="btn-circle" id="btn-nav-back"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="btn-circle" id="btn-nav-forward"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="nav-btn" id="btn-nav-back"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="nav-btn" id="btn-nav-forward"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
 
-                <!-- Barra de Pesquisa -->
-                <div class="search-box">
+                <div class="search-bar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" id="search-input" placeholder="O que você quer ouvir?">
                 </div>
 
-                <div class="user-menu">
-                    <button class="btn-upgrade">Seja Premium</button>
-                    <div class="profile-pic">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
+                <div class="user-profile">
+                    <button class="premium-btn">Seja Premium</button>
+                    <div class="profile-icon"><i class="fa-regular fa-user"></i></div>
                 </div>
             </header>
 
-            <section class="content">
-                <h2 id="section-title">Minhas Músicas</h2>
-                <!-- Container principal da lista/grelha -->
-                <div id="cards-container"></div>
-            </section>
+            <h1 class="page-title" id="section-title">Boa noite</h1>
+
+            <!-- Área Dinâmica -->
+            <div id="cards-container">
+                <div class="spotify-home">
+                    <!-- Cartões de Acesso Rápido -->
+                    <div class="quick-access-grid">
+                        
+                        <!-- Cartão Portugal (Artistas) com a tua imagem portugal.jpg -->
+                        <div class="quick-card" onclick="carregarPlaylist('portugal')">
+                            <img src="portugal.jpg" alt="Portugal (Artistas)">
+                            <span>Portugal (Artistas)</span>
+                        </div>
+
+                        <div class="quick-card" onclick="carregarPlaylist('xutos')">
+                            <img src="https://picsum.photos/id/1025/200" alt="Xutos & Pontapés">
+                            <span>Xutos & Pontapés</span>
+                        </div>
+
+                        <div class="quick-card" onclick="carregarPlaylist('fernando')">
+                            <img src="https://picsum.photos/id/1062/200" alt="Fernando Daniel">
+                            <span>Fernando Daniel</span>
+                        </div>
+
+                        <div class="quick-card" onclick="carregarPlaylist('nuno')">
+                            <img src="https://picsum.photos/id/1074/200" alt="Nuno Ribeiro">
+                            <span>Nuno Ribeiro</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
-    <!-- Player Fixo no Rodapé -->
-    <footer class="player">
-        <div class="song-info">
-            <img id="player-cover" src="https://picsum.photos/200" alt="Capa">
-            <div class="song-text">
+    <!-- Barra Inferior do Player -->
+    <footer class="player-bar">
+        <div class="now-playing">
+            <img id="player-cover" src="https://picsum.photos/200" alt="Capa da música">
+            <div class="track-info">
                 <h4 id="player-title">Selecione uma música</h4>
-                <p id="player-artist">Artista</p>
+                <p id="player-artist">--</p>
             </div>
         </div>
 
         <div class="player-controls">
             <div class="control-buttons">
-                <button id="prev-btn"><i class="fa-solid fa-backward-step"></i></button>
-                <button id="play-btn" class="play-pause-btn"><i class="fa-solid fa-circle-play"></i></button>
-                <button id="next-btn"><i class="fa-solid fa-forward-step"></i></button>
+                <button class="control-btn" id="prev-btn"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="control-btn" id="play-btn"><i class="fa-solid fa-circle-play"></i></button>
+                <button class="control-btn" id="next-btn"><i class="fa-solid fa-forward-step"></i></button>
             </div>
-            <div class="progress-bar-container">
+            <div class="progress-wrapper">
                 <span id="current-time">0:00</span>
-                <div class="progress-bar" id="progress-container">
-                    <div class="progress" id="progress-bar"></div>
+                <div class="progress-bar-container" id="progress-container">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
                 </div>
                 <span id="total-duration">0:00</span>
             </div>
         </div>
 
-        <div class="volume-controls">
+        <div class="volume-container">
             <i class="fa-solid fa-volume-high"></i>
-            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+            <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.7">
         </div>
     </footer>
 
