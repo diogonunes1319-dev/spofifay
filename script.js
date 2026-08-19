@@ -1,443 +1,97 @@
-// Lista de 20 Artistas Portugueses para a Sidebar
-const portugueseArtists = [
-    "Xutos & Pontapés",
-    "Nuno Ribeiro",
-    "Fernando Daniel",
-    "Calema",
-    "Diogo Piçarra",
-    "Carolina Deslandes",
-    "Bárbara Bandeira",
-    "Ivandro",
-    "Syu S",
-    "David Carreira",
-    "Matias Damásio",
-    "GNR",
-    "Ornatos Violeta",
-    "Rui Veloso",
-    "Pedro Abrunhosa",
-    "Plutonio",
-    "Slow J",
-    "Bárbara Tinoco",
-    "António Zambujo",
-    "Wet Bed Gang"
+// Lista de Músicas Locais
+const songs = [
+    { id: 1, title: "Where Have You Been", artist: "Rihanna", duration: "4:02", cover: "imagens/rihanna.jpg", src: "where-have-you-been.mp3" },
+    { id: 2, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "pump-it.mp3" },
+    { id: 3, title: "Amanhã De Manhã - Remix", artist: "Doce, André Henriques", duration: "3:24", cover: "imagens/amanha-de-manha.jpg", src: "amanha-de-manha.mp3" },
+    { id: 4, title: "Dama Bandida", artist: "Fábio Lagarto", duration: "3:10", cover: "imagens/dama-bandida.jpg", src: "dama-bandida.mp3" },
+    
+    // Lista 1
+    { id: 5, title: "Problema", artist: "Matias Damásio", duration: "3:30", cover: "imagens/problema.jpg", src: "problema.mp3" },
+    { id: 6, title: "Rock This Party", artist: "Bob Sinclar", duration: "3:18", cover: "imagens/rock-this-party.jpg", src: "Rock This Party.mp3" },
+    { id: 7, title: "Rosa (feat. Conan Osiris)", artist: "Eu.Clides", duration: "3:40", cover: "imagens/rosa.jpg", src: "Rosa (feat. CONAN OSIRIS)_spotdown.org.mp3" },
+    { id: 8, title: "Saloia", artist: "Gino", duration: "3:15", cover: "imagens/saloia.jpg", src: "Saloia_spotdown.org.mp3" },
+    { id: 9, title: "Scatman", artist: "Scatman John", duration: "3:30", cover: "imagens/scatman.jpg", src: "Scatman.mp3" },
+    { id: 10, title: "Imagina", artist: "Nuno Ribeiro", duration: "3:20", cover: "imagens/imagina.jpg", src: "Nuno Ribeiro - Imagina (SPOTISAVER).mp3" },
+    { id: 11, title: "O Homem Do Leme", artist: "Xutos & Pontapés", duration: "4:00", cover: "imagens/homem-do-leme.jpg", src: "O Homem Do Leme.mp3" },
+    { id: 12, title: "O Homem Do Leme - Live", artist: "Xutos & Pontapés", duration: "4:15", cover: "imagens/homem-do-leme-live.jpg", src: "O Homem Do Leme - Live.mp3" },
+    { id: 13, title: "O Mundo Ao Contrário", artist: "Xutos & Pontapés", duration: "4:10", cover: "imagens/mundo-ao-contrario.jpg", src: "O Mundo Ao Contrário.mp3" },
+    { id: 14, title: "O Bicho", artist: "Iran Costa", duration: "3:50", cover: "imagens/o-bicho.jpg", src: "o-bicho.mp3" },
+    { id: 15, title: "Para Ti Maria", artist: "Xutos & Pontapés", duration: "3:40", cover: "imagens/para-ti-maria.jpg", src: "Para Ti Maria.mp3" },
+    { id: 16, title: "Fujo Contigo (feat. Soraia Ramos)", artist: "Calema", duration: "3:25", cover: "imagens/fujo-contigo.jpg", src: "Fujo Contigo (feat. Soraia Ramos)_spotdown.org.mp3" },
+    { id: 17, title: "Até Voltares", artist: "Jimmy P Feat. Fernando Daniel", duration: "3:35", cover: "imagens/ate-voltares.jpg", src: "Jimmy P Feat. Fernando Daniel - Até Voltares (Prod. SuaveYouKnow & Mantra) - Jimmy P (128k).mp3" },
+    { id: 18, title: "La Plena", artist: "Wisin & Yandel", duration: "3:10", cover: "imagens/la-plena.jpg", src: "La Plena.mp3" },
+    { id: 19, title: "Maria Joana", artist: "Nuno Ribeiro, Calema, Mariza", duration: "3:30", cover: "imagens/maria-joana.jpg", src: "Maria Joana_spotdown.org.mp3" },
+    { id: 20, title: "Não Devia (feat. Loony Johnson)", artist: "Matias Damásio", duration: "3:45", cover: "imagens/nao-devia.jpg", src: "Não Devia (feat. Loony Johnson)_spotdown.org.mp3" },
+    { id: 21, title: "Não Sou O Único", artist: "Xutos & Pontapés", duration: "3:55", cover: "imagens/nao-sou-o-unico.jpg", src: "Não Sou O Único.mp3" },
+    { id: 22, title: "Não Deixa", artist: "Nelson Freitas, Nuno Ribeiro", duration: "3:20", cover: "imagens/nao-deixa.jpg", src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3" },
+    { id: 23, title: "Recomeçar", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/recomecar.jpg", src: "Fernando Daniel - Recomeçar - Fernando Daniel (128k).mp3" },
+    { id: 24, title: "Se Eu ft. Melim", artist: "Fernando Daniel", duration: "3:40", cover: "imagens/se-eu.jpg", src: "Fernando Daniel - Se Eu ft. Melim - Fernando Daniel (128k).mp3" },
+    { id: 25, title: "Tal Como Sou", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/tal-como-sou.jpg", src: "Fernando Daniel - Tal Como Sou - Fernando Daniel (128k).mp3" },
+    { id: 26, title: "Voltas", artist: "Fernando Daniel", duration: "3:20", cover: "imagens/voltas.jpg", src: "Fernando Daniel - Voltas - Fernando Daniel (128k).mp3" },
+
+    // Lista 2
+    { id: 27, title: "Fim Presente", artist: "Fernando Daniel feat. Carolina Deslandes", duration: "3:35", cover: "imagens/fim-presente.jpg", src: "Fernando Daniel feat. Carolina Deslandes - Fim Presente.mp3" },
+    { id: 28, title: "Sem Ti", artist: "Fernando Daniel, Agir", duration: "3:25", cover: "imagens/sem-ti.jpg", src: "Fernando Daniel, Agir - Sem Ti - Fernando Daniel (128k).mp3" },
+    { id: 29, title: "Metade", artist: "Fernando Daniel, Beatriz Rosário", duration: "3:10", cover: "imagens/metade.jpg", src: "Fernando Daniel, Beatriz Rosário - metade - Fernando Daniel (128k).mp3" },
+    { id: 30, title: "Mágoa", artist: "Fernando Daniel", duration: "3:20", cover: "imagens/magoa.jpg", src: "Fernando Daniel - Mágoa - Fernando Daniel (128k).mp3" },
+    { id: 31, title: "Melodia Da Saudade", artist: "Fernando Daniel", duration: "3:40", cover: "imagens/melodia-da-saudade.jpg", src: "Fernando Daniel - Melodia Da Saudade - Fernando Daniel (128k).mp3" },
+    { id: 32, title: "Nada A Perder ft. Carlão", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/nada-a-perder.jpg", src: "Fernando Daniel - Nada A Perder ft. Carlão - Fernando Daniel (128k).mp3" },
+    { id: 33, title: "Nada Mais", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/nada-mais.jpg", src: "Fernando Daniel - Nada Mais - Fernando Daniel (128k).mp3" },
+    { id: 34, title: "Prometo", artist: "Fernando Daniel", duration: "3:25", cover: "imagens/prometo.jpg", src: "Fernando Daniel - prometo - Fernando Daniel (128k).mp3" },
+    { id: 35, title: "Raro", artist: "Fernando Daniel", duration: "3:10", cover: "imagens/raro.jpg", src: "Fernando Daniel - Raro - Fernando Daniel (128k).mp3" },
+    { id: 36, title: "Dias Cinzentos", artist: "Slow J", duration: "3:50", cover: "imagens/dias-cinzentos.jpg", src: "Dias Cinzentos_spotdown.org.mp3" },
+    { id: 37, title: "Essa Mulher", artist: "Matias Damásio", duration: "3:40", cover: "imagens/essa-mulher.jpg", src: "Essa Mulher_spotdown.org.mp3" },
+    { id: 38, title: "Cair", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/cair.jpg", src: "Fernando Daniel - Cair - Fernando Daniel (128k).mp3" },
+    { id: 39, title: "Casa", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/casa.jpg", src: "Fernando Daniel - casa - Fernando Daniel (128k).mp3" },
+    { id: 40, title: "Espera", artist: "Fernando Daniel", duration: "3:50", cover: "imagens/espera.jpg", src: "Fernando Daniel - Espera - Fernando Daniel (128k).mp3" },
+    { id: 41, title: "Báilame - Remix", artist: "Nacho", duration: "3:35", cover: "imagens/bailame.jpg", src: "Báilame - Remix.mp3" },
+    { id: 42, title: "Circo De Feras", artist: "Xutos & Pontapés", duration: "3:10", cover: "imagens/circo-de-feras.jpg", src: "Circo De Feras.mp3" },
+    { id: 43, title: "Contentores", artist: "Xutos & Pontapés", duration: "3:25", cover: "imagens/contentores.jpg", src: "Contentores.mp3" },
+    { id: 44, title: "Amor Limbo (feat. Bluay)", artist: "Nuno Ribeiro", duration: "3:15", cover: "imagens/amor-limbo.jpg", src: "Amor Limbo (feat. Bluay)_spotdown.org.mp3" },
+    { id: 45, title: "Baianá - Original mix", artist: "Bakermat", duration: "3:00", cover: "imagens/baiana.jpg", src: "Baianá - Original mix.mp3" },
+    { id: 46, title: "À Minha Maneira", artist: "Xutos & Pontapés", duration: "3:40", cover: "imagens/a-minha-maneira.jpg", src: "À Minha Maneira.mp3" },
+    { id: 47, title: "Ai Se Ele Cai", artist: "Xutos & Pontapés", duration: "3:05", cover: "imagens/ai-se-ele-cai.jpg", src: "Ai Se Ele Cai.mp3" },
+    { id: 48, title: "A Minha Casinha", artist: "Xutos & Pontapés", duration: "3:30", cover: "imagens/a-minha-casinha.jpg", src: "A Minha Casinha.mp3" },
+
+    // Lista 3 (Novas Músicas / Remixes Spotdown)
+    { id: 49, title: "Baianá - Original Mix", artist: "Bakermat", duration: "3:00", cover: "imagens/baiana.jpg", src: "Baianá - Original mix_spotdown.org.mp3" },
+    { id: 50, title: "Báilame - Remix", artist: "Nacho", duration: "3:35", cover: "imagens/bailame.jpg", src: "Báilame - Remix_spotdown.org.mp3" },
+    { id: 51, title: "La Plena", artist: "Wisin & Yandel", duration: "3:10", cover: "imagens/la-plena.jpg", src: "La Plena_spotdown.org.mp3" },
+    { id: 52, title: "O Bicho - 2015 Remix", artist: "Iran Costa", duration: "3:45", cover: "imagens/o-bicho.jpg", src: "O Bicho - 2015 Remix_spotdown.org.mp3" },
+    { id: 53, title: "Problema (Feat. Laton)", artist: "Matias Damásio", duration: "3:35", cover: "imagens/problema.jpg", src: "Problema (Feat. Laton)_spotdown.org.mp3" },
+    { id: 54, title: "Rock This Party - Remix", artist: "Bob Sinclar", duration: "3:20", cover: "imagens/rock-this-party.jpg", src: "Rock This Party - Remix_spotdown.org.mp3" },
+    { id: 55, title: "Scatman (Aumenta O Som) [feat. Alok]", artist: "Scatman John, Alok", duration: "2:40", cover: "imagens/scatman.jpg", src: "Scatman (Aumenta O Som) [feat. Alok]_spotdown.org.mp3" },
+    { id: 56, title: "Viagem - Johnny 500 Remix", artist: "Johnny 500", duration: "3:15", cover: "imagens/viagem.jpg", src: "Viagem - Johnny 500 Remix_spotdown.org.mp3" },
+    { id: 57, title: "Zookey - Radio Edit", artist: "Yves Larock", duration: "3:10", cover: "imagens/zookey.jpg", src: "Zookey - Radio Edit_spotdown.org.mp3" },
+    { id: 58, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "Pump It - Radio Edit_spotdown.org.mp3" }
 ];
 
-// Lista Completa de Músicas (Sem a pasta 'musicas/')
-const songs = [
-    // --- Músicas Gerais ---
+// ARTISTAS PORTUGUESES (Com Músicas Associadas)
+const artists = [
+    { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3] },
+    { id: 102, name: "Fábio Lagarto", photo: "fabio_lagarto.jpg", songIds: [4] },
+    { id: 103, name: "Calema", photo: "calema.jpg", songIds: [16, 19] },
+    { id: 104, name: "Nuno Ribeiro", photo: "nuno_ribeiro.jpg", songIds: [10, 19, 22, 44] },
+    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [5, 20, 37, 53] },
+    { id: 106, name: "Xutos & Pontapés", photo: "xutos.jpg", songIds: [11, 12, 13, 15, 21, 42, 43, 46, 47, 48] },
+    { id: 110, name: "GNR", photo: "GNR.jpg", songIds: [] },
+    { id: 117, name: "Diogo Piçarra", photo: "diogo_piçarra.jpg", songIds: [] },
+    { id: 118, name: "Fernando Daniel", photo: "fernando_daniel.jpg", songIds: [17, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39, 40] },
+    { id: 119, name: "Carolina Deslandes", photo: "carolina_deslandes.jpg", songIds: [27] },
+    { id: 120, name: "Bárbara Bandeira", photo: "barbara_bandeira.jpg", songIds: [] },
+    { id: 121, name: "Slow J", photo: "slow j.jpg", songIds: [36] },
+    { id: 122, name: "Jimmy P", photo: "jimmy_p.jpg", songIds: [17] },
+    { id: 123, name: "Conan Osiris", photo: "conan_osiris.jpg", songIds: [7] },
+    { id: 124, name: "Soraia Ramos", photo: "soraia_ramos.jpg", songIds: [16] },
+    { id: 125, name: "Agir", photo: "agir.jpg", songIds: [28] }
+];
+
+// PLAYLISTS
+const playlists = [
     {
         id: 1,
-        title: "Amanhã De Manhã - Remix",
-        artist: "Doce, André Henriques",
-        duration: "3:24",
-        cover: "imagens/amanha-de-manha.jpg",
-        src: "amanha-de-manha.mp3"
-    },
-    {
-        id: 2,
-        title: "Baianá - Original mix",
-        artist: "Rogerson",
-        duration: "3:15",
-        cover: "imagens/baiana.jpg",
-        src: "Baianá - Original mix.mp3"
-    },
-    {
-        id: 3,
-        title: "Báilame - Remix",
-        artist: "Nacho, Yandel, Bad Bunny",
-        duration: "3:37",
-        cover: "imagens/bailame.jpg",
-        src: "Báilame - Remix.mp3"
-    },
-    {
-        id: 4,
-        title: "Dama Bandida",
-        artist: "Fábio Lagarto",
-        duration: "3:10",
-        cover: "imagens/dama-bandida.jpg",
-        src: "dama-bandida.mp3"
-    },
-    {
-        id: 5,
-        title: "La Plena",
-        artist: "DJ Diego Alonso",
-        duration: "3:05",
-        cover: "imagens/la-plena.jpg",
-        src: "La Plena.mp3"
-    },
-    {
-        id: 6,
-        title: "O Bicho - 2015 Remix",
-        artist: "Iran Costa",
-        duration: "3:30",
-        cover: "imagens/o-bicho.jpg",
-        src: "o-bicho.mp3"
-    },
-    {
-        id: 7,
-        title: "Problema (Feat. Laton)",
-        artist: "Mastiksoul, Laton",
-        duration: "3:20",
-        cover: "imagens/problema.jpg",
-        src: "problema.mp3"
-    },
-    {
-        id: 8,
-        title: "Pump It - Radio Edit",
-        artist: "Javi Reina",
-        duration: "3:45",
-        cover: "imagens/pump-it.jpg",
-        src: "pump-it.mp3"
-    },
-    {
-        id: 9,
-        title: "Rock This Party - Remix",
-        artist: "DJ R'AN",
-        duration: "3:12",
-        cover: "imagens/rock-this-party.jpg",
-        src: "Rock This Party.mp3"
-    },
-    {
-        id: 10,
-        title: "Scatman (Aumenta O Som)",
-        artist: "Pedrinha Moraes, Alok",
-        duration: "2:08",
-        cover: "imagens/scatman.jpg",
-        src: "Scatman.mp3"
-    },
-    {
-        id: 11,
-        title: "Viagem - Johnny 500 Remix",
-        artist: "Calema, Johnny 500",
-        duration: "3:28",
-        cover: "imagens/viagem.jpg",
-        src: "Viagem.mp3"
-    },
-    {
-        id: 12,
-        title: "Where Have You Been",
-        artist: "Rihanna",
-        duration: "4:02",
-        cover: "imagens/rihanna.jpg",
-        src: "where-have-you-been.mp3"
-    },
-    {
-        id: 13,
-        title: "Zookey - Radio Edit",
-        artist: "Yves Larock feat. Roland Richards",
-        duration: "3:18",
-        cover: "imagens/zookey.jpg",
-        src: "Zookey.mp3"
-    },
-
-    // --- Xutos & Pontapés ---
-    {
-        id: 14,
-        title: "O Homem Do Leme - Live",
-        artist: "Xutos & Pontapés",
-        duration: "4:30",
-        cover: "imagens/xutos.jpg",
-        src: "O Homem Do Leme - Live.mp3"
-    },
-    {
-        id: 15,
-        title: "O Mundo Ao Contrário",
-        artist: "Xutos & Pontapés",
-        duration: "4:15",
-        cover: "imagens/xutos.jpg",
-        src: "O Mundo Ao Contrário.mp3"
-    },
-    {
-        id: 16,
-        title: "À Minha Maneira",
-        artist: "Xutos & Pontapés",
-        duration: "3:25",
-        cover: "imagens/xutos.jpg",
-        src: "À Minha Maneira.mp3"
-    },
-    {
-        id: 17,
-        title: "Circo De Feras",
-        artist: "Xutos & Pontapés",
-        duration: "4:20",
-        cover: "imagens/xutos.jpg",
-        src: "Circo De Feras.mp3"
-    },
-    {
-        id: 18,
-        title: "Não Sou O Único",
-        artist: "Xutos & Pontapés",
-        duration: "4:10",
-        cover: "imagens/xutos.jpg",
-        src: "Não Sou O Único.mp3"
-    },
-    {
-        id: 19,
-        title: "O Homem Do Leme",
-        artist: "Xutos & Pontapés",
-        duration: "4:12",
-        cover: "imagens/xutos.jpg",
-        src: "O Homem Do Leme.mp3"
-    },
-    {
-        id: 20,
-        title: "Para Ti Maria",
-        artist: "Xutos & Pontapés",
-        duration: "3:05",
-        cover: "imagens/xutos.jpg",
-        src: "Para Ti Maria.mp3"
-    },
-    {
-        id: 21,
-        title: "Contentores",
-        artist: "Xutos & Pontapés",
-        duration: "3:50",
-        cover: "imagens/xutos.jpg",
-        src: "Contentores.mp3"
-    },
-    {
-        id: 22,
-        title: "Ai Se Ele Cai",
-        artist: "Xutos & Pontapés",
-        duration: "3:08",
-        cover: "imagens/xutos.jpg",
-        src: "Ai Se Ele Cai.mp3"
-    },
-    {
-        id: 23,
-        title: "A Minha Casinha",
-        artist: "Xutos & Pontapés",
-        duration: "2:20",
-        cover: "imagens/xutos.jpg",
-        src: "A Minha Casinha.mp3"
-    },
-
-    // --- Nuno Ribeiro ---
-    {
-        id: 24,
-        title: "Não Deixa",
-        artist: "Nelson Freitas; Nuno Ribeiro",
-        duration: "3:15",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3"
-    },
-    {
-        id: 25,
-        title: "Imagina",
-        artist: "Nuno Ribeiro",
-        duration: "3:10",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Nuno Ribeiro - Imagina (SPOTISAVER).mp3"
-    },
-    {
-        id: 26,
-        title: "Dias Cinzentos",
-        artist: "Nuno Ribeiro",
-        duration: "3:22",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Dias Cinzentos_spotdown.org.mp3"
-    },
-    {
-        id: 27,
-        title: "Rosa (feat. CONAN OSIRIS)",
-        artist: "Nuno Ribeiro, CONAN OSIRIS",
-        duration: "3:05",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Rosa (feat. CONAN OSIRIS)_spotdown.org.mp3"
-    },
-    {
-        id: 28,
-        title: "Não Devia (feat. Loony Johnson)",
-        artist: "Nuno Ribeiro, Loony Johnson",
-        duration: "3:18",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Não Devia (feat. Loony Johnson)_spotdown.org.mp3"
-    },
-    {
-        id: 29,
-        title: "Fujo Contigo (feat. Soraia Ramos)",
-        artist: "Nuno Ribeiro, Soraia Ramos",
-        duration: "3:40",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Fujo Contigo (feat. Soraia Ramos)_spotdown.org.mp3"
-    },
-    {
-        id: 30,
-        title: "Saloia",
-        artist: "Nuno Ribeiro",
-        duration: "2:55",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Saloia_spotdown.org.mp3"
-    },
-    {
-        id: 31,
-        title: "Amor Limbo (feat. Bluay)",
-        artist: "Nuno Ribeiro, Bluay",
-        duration: "3:12",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Amor Limbo (feat. Bluay)_spotdown.org.mp3"
-    },
-    {
-        id: 32,
-        title: "Maria Joana",
-        artist: "Nuno Ribeiro, Calema, Mariza",
-        duration: "3:30",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Maria Joana_spotdown.org.mp3"
-    },
-    {
-        id: 33,
-        title: "Essa Mulher",
-        artist: "Nuno Ribeiro",
-        duration: "3:08",
-        cover: "imagens/nuno-ribeiro.jpg",
-        src: "Essa Mulher_spotdown.org.mp3"
-    },
-
-    // --- Fernando Daniel ---
-    {
-        id: 34,
-        title: "Cair",
-        artist: "Fernando Daniel",
-        duration: "3:15",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Cair - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 35,
-        title: "Casa",
-        artist: "Fernando Daniel",
-        duration: "3:20",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - casa - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 36,
-        title: "Espera",
-        artist: "Fernando Daniel",
-        duration: "3:48",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Espera - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 37,
-        title: "Mágoa",
-        artist: "Fernando Daniel",
-        duration: "3:10",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Mágoa - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 38,
-        title: "Melodia Da Saudade",
-        artist: "Fernando Daniel",
-        duration: "3:35",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Melodia Da Saudade - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 39,
-        title: "Nada A Perder (feat. Carlão)",
-        artist: "Fernando Daniel, Carlão",
-        duration: "3:12",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Nada A Perder ft. Carlão - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 40,
-        title: "Nada Mais",
-        artist: "Fernando Daniel",
-        duration: "3:25",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Nada Mais - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 41,
-        title: "Prometo",
-        artist: "Fernando Daniel",
-        duration: "3:05",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - prometo - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 42,
-        title: "Raro",
-        artist: "Fernando Daniel",
-        duration: "3:18",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Raro - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 43,
-        title: "Recomeçar",
-        artist: "Fernando Daniel",
-        duration: "3:30",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Recomeçar - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 44,
-        title: "Se Eu (feat. Melim)",
-        artist: "Fernando Daniel, Melim",
-        duration: "3:40",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Se Eu ft. Melim - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 45,
-        title: "Tal Como Sou",
-        artist: "Fernando Daniel",
-        duration: "3:22",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Tal Como Sou - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 46,
-        title: "Voltas",
-        artist: "Fernando Daniel",
-        duration: "3:15",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel - Voltas - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 47,
-        title: "Fim +PRESENTE (II) (feat. Carolina Deslandes)",
-        artist: "Fernando Daniel, Carolina Deslandes",
-        duration: "3:28",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel feat. Carolina Deslandes - Fim +PRESENTE (II) - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 48,
-        title: "Sem Ti",
-        artist: "Fernando Daniel, Agir",
-        duration: "3:42",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel, Agir - Sem Ti - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 49,
-        title: "Metade",
-        artist: "Fernando Daniel, Beatriz Rosário",
-        duration: "3:05",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Fernando Daniel, Beatriz Rosário - metade - Fernando Daniel (128k).mp3"
-    },
-    {
-        id: 50,
-        title: "Até Voltares",
-        artist: "Jimmy P, Fernando Daniel",
-        duration: "3:33",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Jimmy P Feat. Fernando Daniel - Até Voltares (Prod. SuaveYouKnow & Mantra) - Jimmy P (128k).mp3"
-    },
-    {
-        id: 51,
-        title: "Voltamos Juntos",
-        artist: "Fernando Daniel",
-        duration: "2:50",
-        cover: "imagens/fernando-daniel.jpg",
-        src: "Voltamos Juntos - Videoclip Oficial - Staples Portugal (128k).mp3"
+        name: "Portugal",
+        type: "artists"
     }
 ];
 
@@ -445,6 +99,12 @@ const songs = [
 let songIndex = 0;
 let isPlaying = false;
 let currentList = [...songs];
+let activePlaylistId = null;
+
+// Histórico de Navegação (Setas)
+let navigationHistory = [];
+let historyIndex = -1;
+let isNavigatingHistory = false;
 
 // Elementos do DOM
 const cardsContainer = document.getElementById('cards-container');
@@ -462,43 +122,69 @@ const totalDurationEl = document.getElementById('total-duration');
 const volumeSlider = document.getElementById('volume-slider');
 const searchInput = document.getElementById('search-input');
 const btnInicio = document.getElementById('btn-inicio');
+const btnBuscar = document.getElementById('btn-buscar');
+const btnNavBack = document.getElementById('btn-nav-back');
+const btnNavForward = document.getElementById('btn-nav-forward');
 const sectionTitle = document.getElementById('section-title');
-const artistPlaylistsList = document.getElementById('artist-playlists');
+const playlistList = document.getElementById('playlist-list');
 
-// Carregar Playlists dos Artistas Portugueses na Sidebar
-function renderArtistPlaylists() {
-    artistPlaylistsList.innerHTML = '';
-    portugueseArtists.forEach(artist => {
-        const li = document.createElement('li');
-        li.innerHTML = `<i class="fa-solid fa-music"></i> This Is ${artist}`;
-        
-        // Filtra a lista ao clicar na playlist do artista
-        li.addEventListener('click', () => {
-            sectionTitle.innerText = `Playlist: ${artist}`;
-            btnInicio.classList.remove('active');
-            
-            // Normaliza acentos para busca flexível
-            const cleanArtist = artist.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-            
-            const filtered = songs.filter(s => {
-                const songArtistClean = s.artist.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-                return songArtistClean.includes(cleanArtist) || cleanArtist.includes(songArtistClean);
-            });
-            
-            loadCards(filtered);
-        });
-
-        artistPlaylistsList.appendChild(li);
-    });
+// Gestão de Histórico para as Setas
+function pushStateToHistory(state) {
+    if (isNavigatingHistory) return;
+    if (historyIndex < navigationHistory.length - 1) {
+        navigationHistory = navigationHistory.slice(0, historyIndex + 1);
+    }
+    navigationHistory.push(state);
+    historyIndex++;
 }
 
-// Renderizar Músicas
+function restoreState(state) {
+    isNavigatingHistory = true;
+    activePlaylistId = state.activePlaylistId;
+    sectionTitle.innerText = state.title;
+    searchInput.value = state.searchTerm || '';
+
+    if (state.viewType === 'home') {
+        btnInicio.classList.add('active');
+        btnBuscar.classList.remove('active');
+        loadCards(songs);
+    } else if (state.viewType === 'playlist') {
+        btnInicio.classList.remove('active');
+        btnBuscar.classList.remove('active');
+        renderArtistsGrid(artists);
+    } else if (state.viewType === 'artist') {
+        btnInicio.classList.remove('active');
+        btnBuscar.classList.remove('active');
+        const artistSongs = songs.filter(s => state.artistSongIds.includes(s.id));
+        loadCards(artistSongs);
+    }
+    
+    renderPlaylists();
+    isNavigatingHistory = false;
+}
+
+btnNavBack.addEventListener('click', () => {
+    if (historyIndex > 0) {
+        historyIndex--;
+        restoreState(navigationHistory[historyIndex]);
+    }
+});
+
+btnNavForward.addEventListener('click', () => {
+    if (historyIndex < navigationHistory.length - 1) {
+        historyIndex++;
+        restoreState(navigationHistory[historyIndex]);
+    }
+});
+
+// Renderizar Músicas (Formato Lista)
 function loadCards(songsToRender = songs) {
+    cardsContainer.className = 'song-list';
     cardsContainer.innerHTML = '';
     currentList = songsToRender;
 
     if (songsToRender.length === 0) {
-        cardsContainer.innerHTML = `<p class="no-results">Nenhuma música encontrada para esta seleção.</p>`;
+        cardsContainer.innerHTML = `<p class="no-results">Nenhuma música associada a este perfil.</p>`;
         return;
     }
 
@@ -535,56 +221,155 @@ function loadCards(songsToRender = songs) {
     });
 }
 
-// Voltar para o Início (Todas as músicas)
+// Renderizar Artistas (Grelha Responsiva)
+function renderArtistsGrid(artistsToRender = artists) {
+    cardsContainer.className = 'artists-grid';
+    cardsContainer.innerHTML = '';
+
+    artistsToRender.forEach(artist => {
+        const card = document.createElement('div');
+        card.classList.add('artist-card');
+
+        card.innerHTML = `
+            <div class="artist-card-img-wrapper">
+                <img src="${artist.photo}" alt="${artist.name}" onerror="this.src='https://picsum.photos/200?random=${artist.id}'">
+                <div class="play-btn-hover">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+            </div>
+            <div class="artist-card-info">
+                <h4>${artist.name}</h4>
+                <p>Artista</p>
+            </div>
+        `;
+
+        card.addEventListener('click', () => {
+            sectionTitle.innerText = artist.name;
+            const artistSongs = songs.filter(s => artist.songIds.includes(s.id));
+            pushStateToHistory({
+                viewType: 'artist',
+                title: artist.name,
+                activePlaylistId: activePlaylistId,
+                artistSongIds: artist.songIds
+            });
+            loadCards(artistSongs);
+        });
+
+        cardsContainer.appendChild(card);
+    });
+}
+
+// Renderizar Playlists na Sidebar
+function renderPlaylists() {
+    playlistList.innerHTML = '';
+    
+    playlists.forEach(playlist => {
+        const li = document.createElement('li');
+        li.innerText = playlist.name;
+        if (activePlaylistId === playlist.id) {
+            li.classList.add('active-playlist');
+        }
+
+        li.addEventListener('click', () => {
+            openPlaylist(playlist);
+        });
+
+        playlistList.appendChild(li);
+    });
+}
+
+// Abrir Playlist
+function openPlaylist(playlist) {
+    activePlaylistId = playlist.id;
+    sectionTitle.innerText = playlist.name;
+    btnInicio.classList.remove('active');
+    btnBuscar.classList.remove('active');
+    searchInput.value = '';
+
+    pushStateToHistory({
+        viewType: 'playlist',
+        title: playlist.name,
+        activePlaylistId: playlist.id
+    });
+
+    if (playlist.type === 'artists') {
+        renderArtistsGrid(artists);
+    }
+    renderPlaylists();
+}
+
+// Botão Início
 btnInicio.addEventListener('click', (e) => {
     e.preventDefault();
+    activePlaylistId = null;
     sectionTitle.innerText = "Minhas Músicas";
     btnInicio.classList.add('active');
+    btnBuscar.classList.remove('active');
     searchInput.value = '';
+
+    pushStateToHistory({
+        viewType: 'home',
+        title: "Minhas Músicas",
+        activePlaylistId: null
+    });
+
     loadCards(songs);
+    renderPlaylists();
+});
+
+// Botão Buscar
+btnBuscar.addEventListener('click', (e) => {
+    e.preventDefault();
+    btnInicio.classList.remove('active');
+    btnBuscar.classList.add('active');
+    searchInput.focus();
 });
 
 // Pesquisa
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
-    const filteredSongs = songs.filter(song => 
-        song.title.toLowerCase().includes(searchTerm) || 
-        song.artist.toLowerCase().includes(searchTerm)
-    );
 
-    loadCards(filteredSongs);
+    if (activePlaylistId === 1 && cardsContainer.classList.contains('artists-grid')) {
+        const filteredArtists = artists.filter(a => a.name.toLowerCase().includes(searchTerm));
+        renderArtistsGrid(filteredArtists);
+    } else {
+        const filteredSongs = songs.filter(song => 
+            song.title.toLowerCase().includes(searchTerm) || 
+            song.artist.toLowerCase().includes(searchTerm)
+        );
+        loadCards(filteredSongs);
+    }
 });
 
-// Carregar Música no Leitor
+// Player e Controlos de Áudio
 function loadSong(song) {
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
     coverImg.src = song.cover;
     audio.src = song.src;
-    loadCards(currentList);
+    if (cardsContainer.classList.contains('song-list')) {
+        loadCards(currentList);
+    }
 }
 
-// Reproduzir
 function playSong() {
     isPlaying = true;
     audio.play().then(() => {
         playBtn.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
     }).catch(error => {
         console.error("Erro ao tocar:", error);
-        alert(`O ficheiro "${songs[songIndex].src}" não foi encontrado na pasta principal.`);
+        alert(`O ficheiro "${songs[songIndex].src}" não foi encontrado na pasta.`);
         isPlaying = false;
         playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
     });
 }
 
-// Pausar
 function pauseSong() {
     isPlaying = false;
     audio.pause();
     playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
 }
 
-// Alternar Play/Pause
 playBtn.addEventListener('click', () => {
     if (isPlaying) {
         pauseSong();
@@ -594,7 +379,6 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-// Anterior / Próxima
 prevBtn.addEventListener('click', () => {
     songIndex--;
     if (songIndex < 0) songIndex = songs.length - 1;
@@ -609,10 +393,8 @@ nextBtn.addEventListener('click', () => {
     playSong();
 });
 
-// Atualizar Barra de Progresso e Tempos
 audio.addEventListener('timeupdate', (e) => {
     const { duration, currentTime } = e.srcElement;
-    
     if (duration) {
         const progressPercent = (currentTime / duration) * 100;
         progressBar.style.width = `${progressPercent}%`;
@@ -627,27 +409,28 @@ audio.addEventListener('timeupdate', (e) => {
     }
 });
 
-// Mudar tempo da música ao clicar na barra
 progressContainer.addEventListener('click', (e) => {
     const width = progressContainer.clientWidth;
     const clickX = e.offsetX;
     const duration = audio.duration;
-    
-    if (duration) {
-        audio.currentTime = (clickX / width) * duration;
-    }
+    if (duration) audio.currentTime = (clickX / width) * duration;
 });
 
-// Controlo de Volume
 volumeSlider.addEventListener('input', (e) => {
     audio.volume = e.target.value;
 });
 
-// Passar automaticamente para a próxima música quando esta terminar
 audio.addEventListener('ended', () => {
     nextBtn.click();
 });
 
-// Inicialização da Aplicação
-renderArtistPlaylists();
+// Inicialização
+renderPlaylists();
 loadSong(songs[songIndex]);
+
+// Estado Inicial do Histórico
+pushStateToHistory({
+    viewType: 'home',
+    title: "Minhas Músicas",
+    activePlaylistId: null
+});
