@@ -108,7 +108,6 @@ const audio = document.getElementById('audio-player');
 const playBtn = document.getElementById('play-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
-const coverImg = document.getElementById('player-cover');
 const songTitle = document.getElementById('player-title');
 const songArtist = document.getElementById('player-artist');
 const progressBar = document.getElementById('progress-bar');
@@ -452,7 +451,6 @@ searchInput.addEventListener('input', (e) => {
 function loadSong(song) {
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
-    coverImg.src = song.cover;
     audio.src = song.src;
     if (cardsContainer.classList.contains('song-list')) {
         loadCards(currentList);

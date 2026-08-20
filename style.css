@@ -531,10 +531,13 @@ body {
 }
 
 .now-playing img {
-    width: 56px;
-    height: 56px;
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    min-height: 56px !important;
     border-radius: 4px;
     object-fit: cover;
+    display: block;
 }
 
 .track-info h4 {
@@ -629,15 +632,27 @@ body {
    7. RESPONSIVIDADE TELEMÓVEL
    ========================================================== */
 @media (max-width: 768px) {
+    html, body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-y: auto !important;
+        position: relative !important;
+    }
+
     .main-container {
         flex-direction: column;
-        height: auto;
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+        padding-bottom: 160px !important; /* Espaço para o player fixo não tapar o fim */
     }
 
     .sidebar {
         width: 100% !important;
         padding: 12px;
         gap: 8px;
+        position: relative !important;
+        top: auto;
     }
 
     .sidebar-divider, .playlists-header {
@@ -658,11 +673,16 @@ body {
     }
 
     .content {
-        padding: 16px;
+        padding: 16px 16px 30px 16px !important;
+        height: auto !important;
+        overflow-y: visible !important;
+        flex: none !important;
     }
 
     .top-bar {
         flex-wrap: wrap;
+        position: relative !important;
+        top: auto;
     }
 
     .user-profile {
@@ -677,14 +697,37 @@ body {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
+    /* BARRA DE MÚSICA FIXA NO FUNDO NO TELEMÓVEL */
     .player-bar {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
         height: auto;
         padding: 12px;
         flex-direction: column;
         gap: 8px;
+        z-index: 99999 !important;
+        background-color: #121212 !important;
+        border-top: 1px solid #282828;
     }
 
-    .now-playing, .player-controls {
+    .now-playing {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .now-playing img {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+    }
+
+    .player-controls {
         width: 100%;
     }
 
@@ -692,6 +735,7 @@ body {
         display: none;
     }
 }
+
 /* ==========================================================
    AJUSTE DE SCROLL HORIZONTAL APENAS NAS SECÇÕES (MOBILE)
    ========================================================== */
@@ -731,11 +775,13 @@ body {
         scroll-snap-align: start;              /* Prende cada cartão no ecra ao deslizar */
     }
 }
+
 .custom-logo {
     width: 32px;
     height: 32px;
     object-fit: contain;
 }
+
 /* Grelha exclusiva para a Playlist Portugal (2 por linha no telemóvel) */
 .portugal-grid {
     display: grid;
@@ -749,6 +795,7 @@ body {
         grid-template-columns: repeat(2, 1fr) !important; /* Exatamente 2 colunas */
         overflow-x: hidden !important;                     /* Sem scroll horizontal */
         gap: 12px;
+        margin-bottom: 20px;
     }
     
     .portugal-grid .artist-card {
