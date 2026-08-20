@@ -124,7 +124,7 @@ const btnNavForward = document.getElementById('btn-nav-forward');
 const sectionTitle = document.getElementById('section-title');
 const playlistList = document.getElementById('playlist-list');
 
-// Função de Saudação do Spotify
+// Função de Saudação do Spofifay
 function getGreeting() {
     const hour = new Date().getHours();
     if (hour < 12) return "Bom dia";
@@ -181,7 +181,7 @@ btnNavForward.addEventListener('click', () => {
     }
 });
 
-// VISTA DE INÍCIO ESTILO SPOTIFY
+// VISTA DE INÍCIO ESTILO SPOFIFAY
 function renderHomeView() {
     cardsContainer.className = 'spotify-home';
     sectionTitle.innerText = getGreeting();
@@ -190,7 +190,7 @@ function renderHomeView() {
         <!-- Quick Access Grid -->
         <div class="quick-access-grid">
             <div class="quick-card" id="quick-playlist-pt">
-                <div class="quick-card-img"><i class="fa-solid fa-music"></i></div>
+                <img src="portugal.jpg" onerror="this.src='https://picsum.photos/100?random=0'">
                 <span>Portugal (Artistas)</span>
             </div>
             <div class="quick-card" id="quick-artist-xutos">
@@ -334,9 +334,9 @@ function loadCards(songsToRender = songs) {
     });
 }
 
-// Renderizar Grelha de Artistas (Na Playlist Portugal)
+// Renderizar Grelha de Artistas (Na Playlist Portugal - 2 a 2 na vertical no telemóvel)
 function renderArtistsGrid(artistsToRender = artists) {
-    cardsContainer.className = 'artists-grid';
+    cardsContainer.className = 'portugal-grid';
     cardsContainer.innerHTML = '';
 
     artistsToRender.forEach(artist => {
@@ -436,7 +436,7 @@ searchInput.addEventListener('input', (e) => {
         return;
     }
 
-    if (activePlaylistId === 1 && cardsContainer.classList.contains('artists-grid')) {
+    if (activePlaylistId === 1 && cardsContainer.classList.contains('portugal-grid')) {
         const filteredArtists = artists.filter(a => a.name.toLowerCase().includes(searchTerm));
         renderArtistsGrid(filteredArtists);
     } else {
@@ -531,7 +531,7 @@ audio.addEventListener('ended', () => {
     nextBtn.click();
 });
 
-// Inicialização Direta no Início Estilo Spotify
+// Inicialização Direta no Início Estilo Spofifay
 renderPlaylists();
 loadSong(songs[songIndex]);
 

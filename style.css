@@ -692,3 +692,67 @@ body {
         display: none;
     }
 }
+/* ==========================================================
+   AJUSTE DE SCROLL HORIZONTAL APENAS NAS SECÇÕES (MOBILE)
+   ========================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Garantir que a página principal NÃO desliza na horizontal */
+    html, body, .main-container, .content {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    /* 2. Permitir Scroll Horizontal APENAS nas grelhas de Músicas e Artistas */
+    .media-grid, .artists-grid {
+        display: flex !important;              /* Muda de grelha para linha flexível */
+        overflow-x: auto !important;          /* Ativa o deslize horizontal */
+        scroll-snap-type: x mandatory;         /* Transição suave ao arrastar */
+        padding-bottom: 12px;                  /* Espaço para o scroll não cortar */
+        gap: 12px !important;
+        
+        /* Oculta a barra de scroll feia dos browsers */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;                 /* Firefox */
+    }
+
+    /* Oculta a barra de scroll no Chrome/Safari/Edge */
+    .media-grid::-webkit-scrollbar, 
+    .artists-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 3. Tamanho fixo dos cartões para não encolherem ao deslizar */
+    .media-grid .spotify-card, 
+    .artists-grid .artist-card,
+    .artists-grid .spotify-card {
+        flex: 0 0 140px !important;            /* Largura fixa de cada cartão no telemóvel */
+        width: 140px !important;
+        scroll-snap-align: start;              /* Prende cada cartão no ecra ao deslizar */
+    }
+}
+.custom-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+/* Grelha exclusiva para a Playlist Portugal (2 por linha no telemóvel) */
+.portugal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .portugal-grid {
+        grid-template-columns: repeat(2, 1fr) !important; /* Exatamente 2 colunas */
+        overflow-x: hidden !important;                     /* Sem scroll horizontal */
+        gap: 12px;
+    }
+    
+    .portugal-grid .artist-card {
+        width: 100% !important;                             /* Ocupa a coluna inteira */
+        flex: none !important;
+    }
+}
