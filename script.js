@@ -6,7 +6,6 @@ const songs = [
     { id: 4, title: "Dama Bandida", artist: "Fábio Lagarto", duration: "3:10", cover: "imagens/dama-bandida.jpg", src: "dama-bandida.mp3" },
     
     // Lista 1
-    { id: 5, title: "Problema", artist: "Matias Damásio", duration: "3:30", cover: "imagens/problema.jpg", src: "problema.mp3" },
     { id: 6, title: "Rock This Party", artist: "Bob Sinclar", duration: "3:18", cover: "imagens/rock-this-party.jpg", src: "Rock This Party.mp3" },
     { id: 7, title: "Rosa (feat. Conan Osiris)", artist: "Eu.Clides", duration: "3:40", cover: "imagens/rosa.jpg", src: "Rosa (feat. CONAN OSIRIS)_spotdown.org.mp3" },
     { id: 8, title: "Saloia", artist: "Gino", duration: "3:15", cover: "imagens/saloia.jpg", src: "Saloia_spotdown.org.mp3" },
@@ -21,9 +20,8 @@ const songs = [
     { id: 17, title: "Até Voltares", artist: "Jimmy P Feat. Fernando Daniel", duration: "3:35", cover: "imagens/ate-voltares.jpg", src: "Jimmy P Feat. Fernando Daniel - Até Voltares (Prod. SuaveYouKnow & Mantra) - Jimmy P (128k).mp3" },
     { id: 18, title: "La Plena", artist: "Wisin & Yandel", duration: "3:10", cover: "imagens/la-plena.jpg", src: "La Plena.mp3" },
     { id: 19, title: "Maria Joana", artist: "Nuno Ribeiro, Calema, Mariza", duration: "3:30", cover: "imagens/maria-joana.jpg", src: "Maria Joana_spotdown.org.mp3" },
-    { id: 20, title: "Não Devia (feat. Loony Johnson)", artist: "Matias Damásio", duration: "3:45", cover: "imagens/nao-devia.jpg", src: "Não Devia (feat. Loony Johnson)_spotdown.org.mp3" },
     { id: 21, title: "Não Sou O Único", artist: "Xutos & Pontapés", duration: "3:55", cover: "imagens/nao-sou-o-unico.jpg", src: "Não Sou O Único.mp3" },
-    { id: 22, title: "Não Deixa", artist: "Nelson Freitas, Nuno Ribeiro", duration: "3:20", cover: "imagens/nao-deixa.jpg", src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3" },
+    { id: 22, title: "Não Deixa", artist: "Nuno Ribeiro, Nelson Freitas", duration: "3:20", cover: "imagens/nao-deixa.jpg", src: "Nelson Freitas, Nuno Ribeiro - Não Deixa.mp3" },
     { id: 23, title: "Recomeçar", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/recomecar.jpg", src: "Fernando Daniel - Recomeçar - Fernando Daniel (128k).mp3" },
     { id: 24, title: "Se Eu ft. Melim", artist: "Fernando Daniel", duration: "3:40", cover: "imagens/se-eu.jpg", src: "Fernando Daniel - Se Eu ft. Melim - Fernando Daniel (128k).mp3" },
     { id: 25, title: "Tal Como Sou", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/tal-como-sou.jpg", src: "Fernando Daniel - Tal Como Sou - Fernando Daniel (128k).mp3" },
@@ -40,7 +38,7 @@ const songs = [
     { id: 34, title: "Prometo", artist: "Fernando Daniel", duration: "3:25", cover: "imagens/prometo.jpg", src: "Fernando Daniel - prometo - Fernando Daniel (128k).mp3" },
     { id: 35, title: "Raro", artist: "Fernando Daniel", duration: "3:10", cover: "imagens/raro.jpg", src: "Fernando Daniel - Raro - Fernando Daniel (128k).mp3" },
     { id: 36, title: "Dias Cinzentos", artist: "Slow J", duration: "3:50", cover: "imagens/dias-cinzentos.jpg", src: "Dias Cinzentos_spotdown.org.mp3" },
-    { id: 37, title: "Essa Mulher", artist: "Matias Damásio", duration: "3:40", cover: "imagens/essa-mulher.jpg", src: "Essa Mulher_spotdown.org.mp3" },
+    { id: 37, title: "Essa Mulher", artist: "Nuno Ribeiro", duration: "3:40", cover: "imagens/essa-mulher.jpg", src: "Essa Mulher_spotdown.org.mp3" },
     { id: 38, title: "Cair", artist: "Fernando Daniel", duration: "3:15", cover: "imagens/cair.jpg", src: "Fernando Daniel - Cair - Fernando Daniel (128k).mp3" },
     { id: 39, title: "Casa", artist: "Fernando Daniel", duration: "3:30", cover: "imagens/casa.jpg", src: "Fernando Daniel - casa - Fernando Daniel (128k).mp3" },
     { id: 40, title: "Espera", artist: "Fernando Daniel", duration: "3:50", cover: "imagens/espera.jpg", src: "Fernando Daniel - Espera - Fernando Daniel (128k).mp3" },
@@ -53,17 +51,10 @@ const songs = [
     { id: 47, title: "Ai Se Ele Cai", artist: "Xutos & Pontapés", duration: "3:05", cover: "imagens/ai-se-ele-cai.jpg", src: "Ai Se Ele Cai.mp3" },
     { id: 48, title: "A Minha Casinha", artist: "Xutos & Pontapés", duration: "3:30", cover: "imagens/a-minha-casinha.jpg", src: "A Minha Casinha.mp3" },
 
-    // Lista 3
-    { id: 49, title: "Baianá - Original Mix", artist: "Bakermat", duration: "3:00", cover: "imagens/baiana.jpg", src: "Baianá - Original mix_spotdown.org.mp3" },
-    { id: 50, title: "Báilame - Remix", artist: "Nacho", duration: "3:35", cover: "imagens/bailame.jpg", src: "Báilame - Remix_spotdown.org.mp3" },
-    { id: 51, title: "La Plena", artist: "Wisin & Yandel", duration: "3:10", cover: "imagens/la-plena.jpg", src: "La Plena_spotdown.org.mp3" },
-    { id: 52, title: "O Bicho - 2015 Remix", artist: "Iran Costa", duration: "3:45", cover: "imagens/o-bicho.jpg", src: "O Bicho - 2015 Remix_spotdown.org.mp3" },
-    { id: 53, title: "Problema (Feat. Laton)", artist: "Matias Damásio", duration: "3:35", cover: "imagens/problema.jpg", src: "Problema (Feat. Laton)_spotdown.org.mp3" },
-    { id: 54, title: "Rock This Party - Remix", artist: "Bob Sinclar", duration: "3:20", cover: "imagens/rock-this-party.jpg", src: "Rock This Party - Remix_spotdown.org.mp3" },
+    // Faixas Únicas Adicionais
     { id: 55, title: "Scatman (Aumenta O Som) [feat. Alok]", artist: "Scatman John, Alok", duration: "2:40", cover: "imagens/scatman.jpg", src: "Scatman (Aumenta O Som) [feat. Alok]_spotdown.org.mp3" },
     { id: 56, title: "Viagem - Johnny 500 Remix", artist: "Johnny 500", duration: "3:15", cover: "imagens/viagem.jpg", src: "Viagem - Johnny 500 Remix_spotdown.org.mp3" },
     { id: 57, title: "Zookey - Radio Edit", artist: "Yves Larock", duration: "3:10", cover: "imagens/zookey.jpg", src: "Zookey - Radio Edit_spotdown.org.mp3" },
-    { id: 58, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "Pump It - Radio Edit_spotdown.org.mp3" },
 
     // Músicas - Doce
     { id: 59, title: "Ali-Babá", artist: "Doce", duration: "3:10", cover: "imagens/doce.jpg", src: "Ali-Babá_spotdown.org.mp3" },
@@ -72,7 +63,7 @@ const songs = [
     { id: 62, title: "Bem Bom", artist: "Doce", duration: "3:00", cover: "imagens/doce.jpg", src: "Bem Bom_spotdown.org.mp3" },
     { id: 63, title: "Café Com Sal", artist: "Doce", duration: "3:20", cover: "imagens/doce.jpg", src: "Café Com Sal_spotdown.org.mp3" },
 
-    // NOVAS MÚSICAS - CALEMA (Populares / Singles)
+    // MÚSICAS - CALEMA (Populares / Singles)
     { id: 64, title: "À Prova De Bala", artist: "Calema", duration: "3:45", cover: "calema.jpg", src: "Calema - À Prova De Bala.mp3" },
     { id: 65, title: "Respirar", artist: "Calema, Sara Correia", duration: "3:30", cover: "calema.jpg", src: "Calema, Sara Correia - Respirar (SPOTISAVER).mp3" },
     { id: 66, title: "O Nosso Amor", artist: "Soraia Ramos, Calema", duration: "3:50", cover: "calema.jpg", src: "Soraia Ramos, Calema - O Nosso Amor (SPOTISAVER).mp3" },
@@ -83,7 +74,25 @@ const songs = [
     { id: 71, title: "Chuva De Amor", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Calema - Chuva De Amor (SPOTISAVER).mp3" },
     { id: 72, title: "Te Amo", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Calema - Te Amo (SPOTISAVER).mp3" },
 
-    // MÚSICAS - CALEMA (MEO Arena Ao Vivo - Capa Atualizada)
+    // MÚSICAS - MATIAS DAMÁSIO
+    { id: 80, title: "Por Ti Amor", artist: "Matias Damásio, D.A.M.A", duration: "3:30", cover: "matias_damasio.jpg", src: "Matias Damasio, D.A.M.A - Por ti Amor.mp3" },
+    { id: 81, title: "Pelos Cantos do Mundo (feat. Matias Damásio)", artist: "Mickael Carreira, Matias Damásio", duration: "3:40", cover: "matias_damasio.jpg", src: "Mickael Carreira - Pelos Cantos do Mundo ft Matias Damásio (Videoclip Oficial).mp3" },
+    { id: 82, title: "Loucos (feat. Héber Marques)", artist: "Matias Damásio, Héber Marques", duration: "3:45", cover: "matias_damasio.jpg", src: "Matias Damasio - Loucos ft. Héber Marques (Video Oficial).mp3" },
+    { id: 83, title: "Teu Olhar", artist: "Matias Damásio", duration: "3:25", cover: "matias_damasio.jpg", src: "Matias Damasio - Teu Olhar.mp3" },
+    { id: 84, title: "Como Antes", artist: "Matias Damásio", duration: "3:35", cover: "matias_damasio.jpg", src: "Matias Damásio - Como Antes.mp3" },
+
+    // MÚSICAS - D.A.M.A
+    { id: 90, title: "112", artist: "D.A.M.A", duration: "3:15", cover: "dama.jpg", src: "112_spotdown.org.mp3" },
+    { id: 91, title: "Vira Vira", artist: "D.A.M.A", duration: "3:10", cover: "dama.jpg", src: "Vira Vira_spotdown.org.mp3" },
+    { id: 92, title: "Menina Estás à Janela (feat. Vitorino, Buba Espinho & Bandidos do Cante)", artist: "D.A.M.A, Vitorino, Buba Espinho, Bandidos do Cante", duration: "3:45", cover: "dama.jpg", src: "Menina Estás à Janela (feat. Vitorino, Buba Espinho & Bandidos do Cante)_spotdown.org.mp3" },
+    { id: 93, title: "Mãe", artist: "D.A.M.A", duration: "3:30", cover: "dama.jpg", src: "Mãe_spotdown.org.mp3" },
+    { id: 94, title: "CASA", artist: "D.A.M.A", duration: "3:20", cover: "dama.jpg", src: "CASA_spotdown.org.mp3" },
+    { id: 95, title: "Loucamente", artist: "D.A.M.A", duration: "3:25", cover: "dama.jpg", src: "Loucamente_spotdown.org.mp3" },
+    { id: 96, title: "Terra da Maria", artist: "D.A.M.A", duration: "3:15", cover: "dama.jpg", src: "Terra da Maria_spotdown.org.mp3" },
+    { id: 97, title: "Era Eu", artist: "D.A.M.A", duration: "3:35", cover: "dama.jpg", src: "Era Eu_spotdown.org.mp3" },
+    { id: 98, title: "Ficar Óai", artist: "D.A.M.A", duration: "3:05", cover: "dama.jpg", src: "Ficar Óai_spotdown.org.mp3" },
+
+    // MÚSICAS - CALEMA (MEO Arena Ao Vivo)
     { id: 201, title: "Intro (Live in MEO Arena)", artist: "Calema", duration: "2:00", cover: "calema_meo_arena.jpg", src: "Intro (Live in MEO Arena) - Calema (128k).mp3" },
     { id: 202, title: "Onde Anda (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Onde Anda (Live in MEO Arena).mp3" },
     { id: 203, title: "Amar 24/24 (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema_meo_arena.jpg", src: "Amar 2424 (Live in MEO Arena) - Calema (128k).mp3" },
@@ -138,10 +147,10 @@ const artists = [
             }
         ]
     },
-    { id: 104, name: "Nuno Ribeiro", photo: "nuno_ribeiro.jpg", songIds: [10, 19, 22, 44] },
-    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [5, 20, 37, 53] },
+    { id: 104, name: "Nuno Ribeiro", photo: "nuno_ribeiro.jpg", songIds: [10, 19, 22, 37, 44] },
+    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [80, 81, 82, 83, 84] },
     { id: 106, name: "Xutos & Pontapés", photo: "xutos.jpg", songIds: [11, 12, 13, 15, 21, 42, 43, 46, 47, 48] },
-    { id: 110, name: "GNR", photo: "GNR.jpg", songIds: [] },
+    { id: 110, name: "D.A.M.A", photo: "dama.jpg", songIds: [80, 90, 91, 92, 93, 94, 95, 96, 97, 98] },
     { id: 117, name: "Diogo Piçarra", photo: "diogo_piçarra.jpg", songIds: [] },
     { id: 118, name: "Fernando Daniel", photo: "fernando_daniel.jpg", songIds: [17, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 38, 39, 40] },
     { id: 119, name: "Carolina Deslandes", photo: "carolina_deslandes.jpg", songIds: [27] },
