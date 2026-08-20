@@ -63,16 +63,72 @@ const songs = [
     { id: 55, title: "Scatman (Aumenta O Som) [feat. Alok]", artist: "Scatman John, Alok", duration: "2:40", cover: "imagens/scatman.jpg", src: "Scatman (Aumenta O Som) [feat. Alok]_spotdown.org.mp3" },
     { id: 56, title: "Viagem - Johnny 500 Remix", artist: "Johnny 500", duration: "3:15", cover: "imagens/viagem.jpg", src: "Viagem - Johnny 500 Remix_spotdown.org.mp3" },
     { id: 57, title: "Zookey - Radio Edit", artist: "Yves Larock", duration: "3:10", cover: "imagens/zookey.jpg", src: "Zookey - Radio Edit_spotdown.org.mp3" },
-    { id: 58, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "Pump It - Radio Edit_spotdown.org.mp3" }
+    { id: 58, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "Pump It - Radio Edit_spotdown.org.mp3" },
+
+    // Músicas - Doce
+    { id: 59, title: "Ali-Babá", artist: "Doce", duration: "3:10", cover: "imagens/doce.jpg", src: "Ali-Babá_spotdown.org.mp3" },
+    { id: 60, title: "Amanhã De Manhã", artist: "Doce", duration: "3:25", cover: "imagens/doce.jpg", src: "Amanhã De Manhã_spotdown.org.mp3" },
+    { id: 61, title: "OK KO", artist: "Doce", duration: "3:15", cover: "imagens/doce.jpg", src: "Ok, Ko_spotdown.org.mp3" },
+    { id: 62, title: "Bem Bom", artist: "Doce", duration: "3:00", cover: "imagens/doce.jpg", src: "Bem Bom_spotdown.org.mp3" },
+    { id: 63, title: "Café Com Sal", artist: "Doce", duration: "3:20", cover: "imagens/doce.jpg", src: "Café Com Sal_spotdown.org.mp3" },
+
+    // MÚSICAS - CALEMA (MEO Arena Ao Vivo)
+    { id: 201, title: "Intro (Live in MEO Arena)", artist: "Calema", duration: "2:00", cover: "calema.jpg", src: "Intro (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 202, title: "Onde Anda (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Onde Anda (Live in MEO Arena).mp3" },
+    { id: 203, title: "Amar 24/24 (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Amar 2424 (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 204, title: "Interlude Due (Live in MEO Arena)", artist: "Calema", duration: "1:30", cover: "calema.jpg", src: "Interlude Due (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 205, title: "Maria Joana (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Maria Joana (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 206, title: "Mama Ê (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Mama Ê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 207, title: "Bulawê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Bulawê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 208, title: "Homenagem General João Seria (Live in MEO Arena)", artist: "Calema", duration: "3:50", cover: "calema.jpg", src: "Homenagem General João Seria (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 209, title: "Viagem (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Viagem (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 210, title: "A Nossa Dança (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "A Nossa Dança (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 211, title: "Allez Kua Buaru (Live in MEO Arena)", artist: "Calema", duration: "3:10", cover: "calema.jpg", src: "Allez Kua Buaru (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 212, title: "Até De Manhã (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Até De Manhã (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 213, title: "Frágil (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Frágil (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 214, title: "Abraços (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Abraços (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 215, title: "Kelê Mbê (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Kelê Mbê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 216, title: "Korokosso (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Korokosso (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 217, title: "Vai (Parte 2) (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Vai (Parte 2) (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 218, title: "Bomu Kelê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Bomu Kelê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 219, title: "Casa De Madeira (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Casa De Madeira (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 220, title: "Interlude Une (Live in MEO Arena)", artist: "Calema", duration: "1:25", cover: "calema.jpg", src: "Interlude Une (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 221, title: "O Nosso Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "O Nosso Amor (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 222, title: "A Nossa Vez (Live in MEO Arena)", artist: "Calema", duration: "3:45", cover: "calema.jpg", src: "A Nossa Vez (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 223, title: "Dá-Me Dá-Me (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Dá-Me Dá-Me (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 224, title: "Perfume (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Perfume (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 225, title: "Preparado (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Preparado (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 226, title: "Toca A Todos (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Toca A Todos (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 227, title: "Tudo Por Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Tudo Por Amor (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 228, title: "Vai (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Vai (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 229, title: "Te Amo (Live in MEO Arena)", artist: "Calema", duration: "4:00", cover: "calema.jpg", src: "Te Amo (Live in MEO Arena) - Calema (128k).mp3" }
 ];
 
 // ARTISTAS PORTUGUESES
 const artists = [
-    { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3] },
+    { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3, 59, 60, 61, 62, 63] },
     { id: 102, name: "Fábio Lagarto", photo: "fabio_lagarto.jpg", songIds: [4] },
-    { id: 103, name: "Calema", photo: "calema.jpg", songIds: [] },
+    { 
+        id: 103, 
+        name: "Calema", 
+        photo: "calema.jpg", 
+        songIds: [16, 19],
+        albums: [
+            {
+                id: "calema-meo-arena",
+                title: "MEO Arena (Ao Vivo)",
+                cover: "calema.jpg",
+                year: "2024",
+                songIds: [
+                    201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 
+                    211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 
+                    221, 222, 223, 224, 225, 226, 227, 228, 229
+                ]
+            }
+        ]
+    },
     { id: 104, name: "Nuno Ribeiro", photo: "nuno_ribeiro.jpg", songIds: [10, 19, 22, 44] },
-    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [] },
+    { id: 105, name: "Matias Damásio", photo: "matias_damasio.jpg", songIds: [5, 20, 37, 53] },
     { id: 106, name: "Xutos & Pontapés", photo: "xutos.jpg", songIds: [11, 12, 13, 15, 21, 42, 43, 46, 47, 48] },
     { id: 110, name: "GNR", photo: "GNR.jpg", songIds: [] },
     { id: 117, name: "Diogo Piçarra", photo: "diogo_piçarra.jpg", songIds: [] },
@@ -123,7 +179,7 @@ const btnNavForward = document.getElementById('btn-nav-forward');
 const sectionTitle = document.getElementById('section-title');
 const playlistList = document.getElementById('playlist-list');
 
-// Função de Saudação do Spofifay
+// Função de Saudação
 function getGreeting() {
     const hour = new Date().getHours();
     if (hour < 12) return "Bom dia";
@@ -131,7 +187,7 @@ function getGreeting() {
     return "Boa noite";
 }
 
-// Histórico de Navegação (Setas)
+// Histórico de Navegação
 function pushStateToHistory(state) {
     if (isNavigatingHistory) return;
     if (historyIndex < navigationHistory.length - 1) {
@@ -158,8 +214,13 @@ function restoreState(state) {
     } else if (state.viewType === 'artist') {
         btnInicio.classList.remove('active');
         btnBuscar.classList.remove('active');
-        const artistSongs = songs.filter(s => state.artistSongIds.includes(s.id));
-        loadCards(artistSongs);
+        const artist = artists.find(a => a.id === state.artistId);
+        if (artist) openArtistView(artist, false);
+    } else if (state.viewType === 'album') {
+        btnInicio.classList.remove('active');
+        btnBuscar.classList.remove('active');
+        const albumSongs = songs.filter(s => state.songIds.includes(s.id));
+        loadCards(albumSongs);
     }
     
     renderPlaylists();
@@ -186,11 +247,14 @@ function renderHomeView() {
     sectionTitle.innerText = getGreeting();
 
     cardsContainer.innerHTML = `
-        <!-- Quick Access Grid -->
         <div class="quick-access-grid">
             <div class="quick-card" id="quick-playlist-pt">
                 <img src="portugal.jpg" onerror="this.src='https://picsum.photos/100?random=0'">
                 <span>Portugal (Artistas)</span>
+            </div>
+            <div class="quick-card" id="quick-artist-calema">
+                <img src="calema.jpg" onerror="this.src='https://picsum.photos/100?random=4'">
+                <span>Calema</span>
             </div>
             <div class="quick-card" id="quick-artist-xutos">
                 <img src="xutos.jpg" onerror="this.src='https://picsum.photos/100?random=1'">
@@ -200,13 +264,8 @@ function renderHomeView() {
                 <img src="fernando_daniel.jpg" onerror="this.src='https://picsum.photos/100?random=2'">
                 <span>Fernando Daniel</span>
             </div>
-            <div class="quick-card" id="quick-artist-nr">
-                <img src="nuno_ribeiro.jpg" onerror="this.src='https://picsum.photos/100?random=3'">
-                <span>Nuno Ribeiro</span>
-            </div>
         </div>
 
-        <!-- Secção 1: Músicas em Destaque -->
         <div class="home-section">
             <div class="section-header">
                 <h2>Músicas Recomendadas</h2>
@@ -214,7 +273,6 @@ function renderHomeView() {
             <div class="media-grid" id="featured-songs-grid"></div>
         </div>
 
-        <!-- Secção 2: Artistas Populares -->
         <div class="home-section">
             <div class="section-header">
                 <h2>Artistas Populares</h2>
@@ -223,13 +281,11 @@ function renderHomeView() {
         </div>
     `;
 
-    // Eventos nos Quick Cards
     document.getElementById('quick-playlist-pt').addEventListener('click', () => openPlaylist(playlists[0]));
+    document.getElementById('quick-artist-calema').addEventListener('click', () => openArtistView(artists.find(a => a.id === 103)));
     document.getElementById('quick-artist-xutos').addEventListener('click', () => openArtistView(artists.find(a => a.id === 106)));
     document.getElementById('quick-artist-fd').addEventListener('click', () => openArtistView(artists.find(a => a.id === 118)));
-    document.getElementById('quick-artist-nr').addEventListener('click', () => openArtistView(artists.find(a => a.id === 104)));
 
-    // Preencher Músicas Recomendadas
     const songsGrid = document.getElementById('featured-songs-grid');
     const sampleSongs = songs.slice(0, 6);
     sampleSongs.forEach((song) => {
@@ -254,18 +310,19 @@ function renderHomeView() {
         songsGrid.appendChild(card);
     });
 
-    // Preencher Artistas Populares
     const artistsGrid = document.getElementById('featured-artists-grid');
     const sampleArtists = artists.slice(0, 6);
     sampleArtists.forEach((artist) => {
         const card = document.createElement('div');
-        card.className = 'spotify-card artist-style';
+        card.className = 'artist-card';
         card.innerHTML = `
-            <div class="card-img-container">
+            <div class="artist-card-img-wrapper">
                 <img src="${artist.photo}" alt="${artist.name}" onerror="this.src='https://picsum.photos/200?random=${artist.id}'">
-                <button class="card-play-btn"><i class="fa-solid fa-play"></i></button>
+                <div class="play-btn-hover">
+                    <i class="fa-solid fa-play"></i>
+                </div>
             </div>
-            <div class="card-info">
+            <div class="artist-card-info">
                 <h4>${artist.name}</h4>
                 <p>Artista</p>
             </div>
@@ -275,28 +332,92 @@ function renderHomeView() {
     });
 }
 
-// Abrir vista de artista
-function openArtistView(artist) {
+// Abrir Vista do Artista (1. Músicas -> 2. Álbuns)
+function openArtistView(artist, pushHistory = true) {
     if (!artist) return;
     sectionTitle.innerText = artist.name;
-    const artistSongs = songs.filter(s => artist.songIds.includes(s.id));
-    pushStateToHistory({
-        viewType: 'artist',
-        title: artist.name,
-        activePlaylistId: activePlaylistId,
-        artistSongIds: artist.songIds
-    });
-    loadCards(artistSongs);
-}
 
-// Renderizar Músicas em Tabela/Lista (Usado em procuras ou ao clicar num artista)
-function loadCards(songsToRender = songs) {
+    if (pushHistory) {
+        pushStateToHistory({
+            viewType: 'artist',
+            title: artist.name,
+            artistId: artist.id,
+            activePlaylistId: activePlaylistId
+        });
+    }
+
     cardsContainer.className = 'song-list';
     cardsContainer.innerHTML = '';
-    currentList = songsToRender;
 
+    // 1. PRIMEIRA SECÇÃO: Músicas soltas do Artista
+    const albumSongIds = artist.albums ? artist.albums.flatMap(a => a.songIds) : [];
+    const artistSongs = songs.filter(s => artist.songIds.includes(s.id) && !albumSongIds.includes(s.id));
+
+    if (artistSongs.length > 0) {
+        const songsHeader = document.createElement('h3');
+        songsHeader.innerText = "Músicas Populares";
+        songsHeader.style.margin = "0 0 15px 0";
+        cardsContainer.appendChild(songsHeader);
+
+        const songsContainer = document.createElement('div');
+        cardsContainer.appendChild(songsContainer);
+        renderSongRows(artistSongs, songsContainer);
+    }
+
+    // 2. SEGUNDA SECÇÃO: Álbuns
+    if (artist.albums && artist.albums.length > 0) {
+        const albumsHeader = document.createElement('h3');
+        albumsHeader.innerText = "Álbuns";
+        albumsHeader.style.margin = "25px 0 15px 0";
+        cardsContainer.appendChild(albumsHeader);
+
+        const albumsGrid = document.createElement('div');
+        albumsGrid.className = 'portugal-grid';
+
+        artist.albums.forEach(album => {
+            const albumCard = document.createElement('div');
+            albumCard.className = 'artist-card';
+
+            albumCard.innerHTML = `
+                <div class="artist-card-img-wrapper">
+                    <img src="${album.cover}" alt="${album.title}" onerror="this.src='https://picsum.photos/200?random=${artist.id}'">
+                    <div class="play-btn-hover">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+                <div class="artist-card-info">
+                    <h4>${album.title}</h4>
+                    <p>${album.year} • Álbum</p>
+                </div>
+            `;
+
+            albumCard.addEventListener('click', () => openAlbumView(album));
+            albumsGrid.appendChild(albumCard);
+        });
+
+        cardsContainer.appendChild(albumsGrid);
+    }
+}
+
+// Abrir Músicas do Álbum
+function openAlbumView(album) {
+    sectionTitle.innerText = album.title;
+
+    pushStateToHistory({
+        viewType: 'album',
+        title: album.title,
+        songIds: album.songIds,
+        activePlaylistId: activePlaylistId
+    });
+
+    const albumSongs = album.songIds.map(id => songs.find(s => s.id === id)).filter(Boolean);
+    loadCards(albumSongs);
+}
+
+// Renderizar Faixas de Música (A DURAÇÃO FOI REMOVIDA DAQUI)
+function renderSongRows(songsToRender, container) {
     if (songsToRender.length === 0) {
-        cardsContainer.innerHTML = `<p class="no-results">Nenhuma música associada a este perfil.</p>`;
+        container.innerHTML = `<p class="no-results" style="padding: 15px 0; color: #b3b3b3;">Nenhuma música disponível neste álbum.</p>`;
         return;
     }
 
@@ -320,20 +441,27 @@ function loadCards(songsToRender = songs) {
                     <span>${song.artist}</span>
                 </div>
             </div>
-            <div class="song-duration">${song.duration}</div>
         `;
 
         row.addEventListener('click', () => {
+            currentList = songsToRender;
             songIndex = originalIndex;
             loadSong(songs[songIndex]);
             playSong();
         });
 
-        cardsContainer.appendChild(row);
+        container.appendChild(row);
     });
 }
 
-// Renderizar Grelha de Artistas (Na Playlist Portugal - 2 a 2 na vertical no telemóvel)
+// Load General Cards
+function loadCards(songsToRender = songs) {
+    cardsContainer.className = 'song-list';
+    cardsContainer.innerHTML = '';
+    renderSongRows(songsToRender, cardsContainer);
+}
+
+// Renderizar Grelha de Artistas
 function renderArtistsGrid(artistsToRender = artists) {
     cardsContainer.className = 'portugal-grid';
     cardsContainer.innerHTML = '';
@@ -399,7 +527,7 @@ function openPlaylist(playlist) {
     renderPlaylists();
 }
 
-// Botões de Topo
+// Botões de Nav
 btnInicio.addEventListener('click', (e) => {
     e.preventDefault();
     activePlaylistId = null;
@@ -447,14 +575,11 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
-// Player Audio
+// Audio Player Controls
 function loadSong(song) {
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
     audio.src = song.src;
-    if (cardsContainer.classList.contains('song-list')) {
-        loadCards(currentList);
-    }
 }
 
 function playSong() {
@@ -529,7 +654,20 @@ audio.addEventListener('ended', () => {
     nextBtn.click();
 });
 
-// Inicialização Direta no Início Estilo Spofifay
+// DESATIVAR ZOOM DA PÁGINA
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=' || e.key === '0')) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener('wheel', (e) => {
+    if (e.ctrlKey) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// Init
 renderPlaylists();
 loadSong(songs[songIndex]);
 

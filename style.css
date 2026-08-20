@@ -602,6 +602,8 @@ body {
     border-radius: 2px;
     cursor: pointer;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .progress-bar-fill {
@@ -609,10 +611,33 @@ body {
     background-color: #fff;
     border-radius: 2px;
     width: 0%;
+    position: relative; /* Necessário para posicionar a bolinha */
+    transition: background-color 0.2s ease;
 }
 
+/* Bolinha de progresso na ponta da barra */
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -6px; /* Alinha o centro da bolinha à ponta da barra */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Escondida por defeito */
+    transition: opacity 0.2s ease;
+}
+
+/* Mostra a bolinha e muda a cor da barra para verde ao passar o rato */
 .progress-bar-container:hover .progress-bar-fill {
     background-color: #1db954;
+}
+
+.progress-bar-container:hover .progress-bar-fill::after {
+    opacity: 1; /* Exibe a bolinha */
 }
 
 .volume-container {
@@ -802,4 +827,28 @@ body {
         width: 100% !important;                             /* Ocupa a coluna inteira */
         flex: none !important;
     }
+}
+/* 1. Por defeito, a bolinha existe na ponta da barra mas está invisível (opacity: 0) */
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Escondida por defeito */
+    transition: opacity 0.2s ease;
+}
+
+/* 2. Quando o cursor fica por cima da linha, a bolinha aparece (opacity: 1) e a barra fica verde */
+.progress-bar-container:hover .progress-bar-fill {
+    background-color: #1db954;
+}
+
+.progress-bar-container:hover .progress-bar-fill::after {
+    opacity: 1; /* Aparece ao passar o cursor */
 }
