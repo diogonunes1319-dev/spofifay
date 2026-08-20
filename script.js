@@ -72,36 +72,47 @@ const songs = [
     { id: 62, title: "Bem Bom", artist: "Doce", duration: "3:00", cover: "imagens/doce.jpg", src: "Bem Bom_spotdown.org.mp3" },
     { id: 63, title: "Café Com Sal", artist: "Doce", duration: "3:20", cover: "imagens/doce.jpg", src: "Café Com Sal_spotdown.org.mp3" },
 
-    // MÚSICAS - CALEMA (MEO Arena Ao Vivo)
-    { id: 201, title: "Intro (Live in MEO Arena)", artist: "Calema", duration: "2:00", cover: "calema.jpg", src: "Intro (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 202, title: "Onde Anda (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Onde Anda (Live in MEO Arena).mp3" },
-    { id: 203, title: "Amar 24/24 (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Amar 2424 (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 204, title: "Interlude Due (Live in MEO Arena)", artist: "Calema", duration: "1:30", cover: "calema.jpg", src: "Interlude Due (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 205, title: "Maria Joana (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Maria Joana (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 206, title: "Mama Ê (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Mama Ê (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 207, title: "Bulawê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Bulawê (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 208, title: "Homenagem General João Seria (Live in MEO Arena)", artist: "Calema", duration: "3:50", cover: "calema.jpg", src: "Homenagem General João Seria (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 209, title: "Viagem (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Viagem (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 210, title: "A Nossa Dança (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "A Nossa Dança (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 211, title: "Allez Kua Buaru (Live in MEO Arena)", artist: "Calema", duration: "3:10", cover: "calema.jpg", src: "Allez Kua Buaru (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 212, title: "Até De Manhã (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Até De Manhã (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 213, title: "Frágil (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Frágil (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 214, title: "Abraços (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Abraços (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 215, title: "Kelê Mbê (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Kelê Mbê (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 216, title: "Korokosso (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Korokosso (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 217, title: "Vai (Parte 2) (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Vai (Parte 2) (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 218, title: "Bomu Kelê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Bomu Kelê (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 219, title: "Casa De Madeira (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Casa De Madeira (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 220, title: "Interlude Une (Live in MEO Arena)", artist: "Calema", duration: "1:25", cover: "calema.jpg", src: "Interlude Une (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 221, title: "O Nosso Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "O Nosso Amor (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 222, title: "A Nossa Vez (Live in MEO Arena)", artist: "Calema", duration: "3:45", cover: "calema.jpg", src: "A Nossa Vez (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 223, title: "Dá-Me Dá-Me (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Dá-Me Dá-Me (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 224, title: "Perfume (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema.jpg", src: "Perfume (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 225, title: "Preparado (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Preparado (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 226, title: "Toca A Todos (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema.jpg", src: "Toca A Todos (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 227, title: "Tudo Por Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Tudo Por Amor (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 228, title: "Vai (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Vai (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 229, title: "Te Amo (Live in MEO Arena)", artist: "Calema", duration: "4:00", cover: "calema.jpg", src: "Te Amo (Live in MEO Arena) - Calema (128k).mp3" }
+    // NOVAS MÚSICAS - CALEMA (Populares / Singles)
+    { id: 64, title: "À Prova De Bala", artist: "Calema", duration: "3:45", cover: "calema.jpg", src: "Calema - À Prova De Bala.mp3" },
+    { id: 65, title: "Respirar", artist: "Calema, Sara Correia", duration: "3:30", cover: "calema.jpg", src: "Calema, Sara Correia - Respirar (SPOTISAVER).mp3" },
+    { id: 66, title: "O Nosso Amor", artist: "Soraia Ramos, Calema", duration: "3:50", cover: "calema.jpg", src: "Soraia Ramos, Calema - O Nosso Amor (SPOTISAVER).mp3" },
+    { id: 67, title: "A Nossa Vez", artist: "Calema", duration: "4:10", cover: "calema.jpg", src: "Calema - A Nossa Vez (SPOTISAVER).mp3" },
+    { id: 68, title: "Leva Tudo", artist: "Calema, Dilsinho", duration: "3:25", cover: "calema.jpg", src: "Calema, Dilsinho - Leva Tudo (SPOTISAVER).mp3" },
+    { id: 69, title: "A Nossa Dança", artist: "Calema", duration: "3:15", cover: "calema.jpg", src: "Calema - A Nossa Dança (SPOTISAVER).mp3" },
+    { id: 70, title: "Amar Pela Metade", artist: "Calema", duration: "3:40", cover: "calema.jpg", src: "Calema - Amar Pela Metade (SPOTISAVER).mp3" },
+    { id: 71, title: "Chuva De Amor", artist: "Calema", duration: "3:20", cover: "calema.jpg", src: "Calema - Chuva De Amor (SPOTISAVER).mp3" },
+    { id: 72, title: "Te Amo", artist: "Calema", duration: "3:35", cover: "calema.jpg", src: "Calema - Te Amo (SPOTISAVER).mp3" },
+
+    // MÚSICAS - CALEMA (MEO Arena Ao Vivo - Capa Atualizada)
+    { id: 201, title: "Intro (Live in MEO Arena)", artist: "Calema", duration: "2:00", cover: "calema_meo_arena.jpg", src: "Intro (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 202, title: "Onde Anda (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Onde Anda (Live in MEO Arena).mp3" },
+    { id: 203, title: "Amar 24/24 (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema_meo_arena.jpg", src: "Amar 2424 (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 204, title: "Interlude Due (Live in MEO Arena)", artist: "Calema", duration: "1:30", cover: "calema_meo_arena.jpg", src: "Interlude Due (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 205, title: "Maria Joana (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema_meo_arena.jpg", src: "Maria Joana (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 206, title: "Mama Ê (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema_meo_arena.jpg", src: "Mama Ê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 207, title: "Bulawê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema_meo_arena.jpg", src: "Bulawê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 208, title: "Homenagem General João Seria (Live in MEO Arena)", artist: "Calema", duration: "3:50", cover: "calema_meo_arena.jpg", src: "Homenagem General João Seria (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 209, title: "Viagem (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Viagem (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 210, title: "A Nossa Dança (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema_meo_arena.jpg", src: "A Nossa Dança (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 211, title: "Allez Kua Buaru (Live in MEO Arena)", artist: "Calema", duration: "3:10", cover: "calema_meo_arena.jpg", src: "Allez Kua Buaru (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 212, title: "Até De Manhã (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema_meo_arena.jpg", src: "Até De Manhã (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 213, title: "Frágil (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema_meo_arena.jpg", src: "Frágil (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 214, title: "Abraços (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema_meo_arena.jpg", src: "Abraços (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 215, title: "Kelê Mbê (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Kelê Mbê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 216, title: "Korokosso (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema_meo_arena.jpg", src: "Korokosso (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 217, title: "Vai (Parte 2) (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema_meo_arena.jpg", src: "Vai (Parte 2) (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 218, title: "Bomu Kelê (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema_meo_arena.jpg", src: "Bomu Kelê (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 219, title: "Casa De Madeira (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Casa De Madeira (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 220, title: "Interlude Une (Live in MEO Arena)", artist: "Calema", duration: "1:25", cover: "calema_meo_arena.jpg", src: "Interlude Une (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 221, title: "O Nosso Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema_meo_arena.jpg", src: "O Nosso Amor (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 222, title: "A Nossa Vez (Live in MEO Arena)", artist: "Calema", duration: "3:45", cover: "calema_meo_arena.jpg", src: "A Nossa Vez (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 223, title: "Dá-Me Dá-Me (Live in MEO Arena)", artist: "Calema", duration: "3:20", cover: "calema_meo_arena.jpg", src: "Dá-Me Dá-Me (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 224, title: "Perfume (Live in MEO Arena)", artist: "Calema", duration: "3:30", cover: "calema_meo_arena.jpg", src: "Perfume (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 225, title: "Preparado (Live in MEO Arena)", artist: "Calema", duration: "3:15", cover: "calema_meo_arena.jpg", src: "Preparado (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 226, title: "Toca A Todos (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema_meo_arena.jpg", src: "Toca A Todos (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 227, title: "Tudo Por Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema_meo_arena.jpg", src: "Tudo Por Amor (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 228, title: "Vai (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema_meo_arena.jpg", src: "Vai (Live in MEO Arena) - Calema (128k).mp3" },
+    { id: 229, title: "Te Amo (Live in MEO Arena)", artist: "Calema", duration: "4:00", cover: "calema_meo_arena.jpg", src: "Te Amo (Live in MEO Arena) - Calema (128k).mp3" }
 ];
 
 // ARTISTAS PORTUGUESES
@@ -112,12 +123,12 @@ const artists = [
         id: 103, 
         name: "Calema", 
         photo: "calema.jpg", 
-        songIds: [16, 19],
+        songIds: [16, 19, 64, 65, 66, 67, 68, 69, 70, 71, 72],
         albums: [
             {
                 id: "calema-meo-arena",
                 title: "MEO Arena (Ao Vivo)",
-                cover: "calema.jpg",
+                cover: "calema_meo_arena.jpg",
                 year: "2024",
                 songIds: [
                     201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 
@@ -414,7 +425,7 @@ function openAlbumView(album) {
     loadCards(albumSongs);
 }
 
-// Renderizar Faixas de Música (A DURAÇÃO FOI REMOVIDA DAQUI)
+// Renderizar Faixas de Música
 function renderSongRows(songsToRender, container) {
     if (songsToRender.length === 0) {
         container.innerHTML = `<p class="no-results" style="padding: 15px 0; color: #b3b3b3;">Nenhuma música disponível neste álbum.</p>`;
