@@ -121,7 +121,33 @@ const songs = [
     { id: 226, title: "Toca A Todos (Live in MEO Arena)", artist: "Calema", duration: "3:25", cover: "calema_meo_arena.jpg", src: "Toca A Todos (Live in MEO Arena) - Calema (128k).mp3" },
     { id: 227, title: "Tudo Por Amor (Live in MEO Arena)", artist: "Calema", duration: "3:35", cover: "calema_meo_arena.jpg", src: "Tudo Por Amor (Live in MEO Arena) - Calema (128k).mp3" },
     { id: 228, title: "Vai (Live in MEO Arena)", artist: "Calema", duration: "3:40", cover: "calema_meo_arena.jpg", src: "Vai (Live in MEO Arena) - Calema (128k).mp3" },
-    { id: 229, title: "Te Amo (Live in MEO Arena)", artist: "Calema", duration: "4:00", cover: "calema_meo_arena.jpg", src: "Te Amo (Live in MEO Arena) - Calema (128k).mp3" }
+    { id: 229, title: "Te Amo (Live in MEO Arena)", artist: "Calema", duration: "4:00", cover: "calema_meo_arena.jpg", src: "Te Amo (Live in MEO Arena) - Calema (128k).mp3" },
+
+    // MÚSICAS - CALEMA (Estádio da Luz Ao Vivo)
+    { id: 313, title: "Intro - Live At Estádio Da Luz", artist: "Calema", duration: "2:00", cover: "Live At Estádio Da Luz.jpg", src: "Intro - Live At Estádio Da Luz_spotdown.org" },
+    { id: 321, title: "Te Amo - Live At Estádio Da Luz", artist: "Calema", duration: "4:00", cover: "Live At Estádio Da Luz.jpg", src: "Te Amo - Live At Estádio Da Luz_spotdown.org" },
+    { id: 302, title: "A Nossa Vez - Live At Estádio Da Luz", artist: "Calema", duration: "3:45", cover: "Live At Estádio Da Luz.jpg", src: "A Nossa Vez - Live At Estádio Da Luz_spotdown.org" },
+    { id: 319, title: "Perfume - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "Perfume - Live At Estádio Da Luz_spotdown.org" },
+    { id: 322, title: "Toca A Todos - Live At Estádio Da Luz", artist: "Calema", duration: "3:25", cover: "Live At Estádio Da Luz.jpg", src: "Toca A Todos - Live At Estádio Da Luz_spotdown.org" },
+    { id: 304, title: "Alice - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "Alice - Live At Estádio Da Luz_spotdown.org" },
+    { id: 317, title: "Maya - Live At Estádio Da Luz", artist: "Calema", duration: "3:15", cover: "Live At Estádio Da Luz.jpg", src: "Maya - Live At Estádio Da Luz_spotdown.org" },
+    { id: 312, title: "Eu E Tu - Live At Estádio Da Luz", artist: "Calema", duration: "3:25", cover: "Live At Estádio Da Luz.jpg", src: "Eu E Tu - Live At Estádio Da Luz_spotdown.org" },
+    { id: 320, title: "Respirar - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "Respirar - Live At Estádio Da Luz_spotdown.org" },
+    { id: 305, title: "Allez - Live At Estádio Da Luz", artist: "Calema", duration: "3:10", cover: "Live At Estádio Da Luz.jpg", src: "Allez - Live At Estádio Da Luz_spotdown.org" },
+    { id: 314, title: "Kua Buaru - Live At Estádio Da Luz", artist: "Calema", duration: "3:10", cover: "Live At Estádio Da Luz.jpg", src: "Kua Buaru - Live At Estádio Da Luz_spotdown.org" },
+    { id: 308, title: "Bulawê - Live At Estádio Da Luz", artist: "Calema", duration: "3:15", cover: "Live At Estádio Da Luz.jpg", src: "Bulawê - Live At Estádio Da Luz_spotdown.org" },
+    { id: 303, title: "Abraços - Live At Estádio Da Luz", artist: "Calema", duration: "3:25", cover: "Live At Estádio Da Luz.jpg", src: "Abraços - Live At Estádio Da Luz_spotdown.org" },
+    { id: 309, title: "Casa De Madeira - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "Casa De Madeira - Live At Estádio Da Luz_spotdown.org" },
+    { id: 307, title: "Bomu Kelê - Live At Estádio Da Luz", artist: "Calema", duration: "3:15", cover: "Live At Estádio Da Luz.jpg", src: "Bomu Kelê - Live At Estádio Da Luz_spotdown.org" },
+    { id: 323, title: "Txinguinha - Live At Estádio Da Luz", artist: "Calema", duration: "3:20", cover: "Live At Estádio Da Luz.jpg", src: "Txinguinha - Live At Estádio Da Luz_spotdown.org" },
+    { id: 311, title: "Distinu - Live At Estádio Da Luz", artist: "Calema", duration: "3:35", cover: "Live At Estádio Da Luz.jpg", src: "Distinu - Live At Estádio Da Luz_spotdown.org" },
+    { id: 306, title: "Amar Pela Metade - Live At Estádio Da Luz", artist: "Calema", duration: "3:40", cover: "Live At Estádio Da Luz.jpg", src: "Amar Pela Metade - Live At Estádio Da Luz_spotdown.org" },
+    { id: 310, title: "Dis-Le Moi - Live At Estádio Da Luz", artist: "Calema", duration: "3:20", cover: "Live At Estádio Da Luz.jpg", src: "Dis-Le Moi - Live At Estádio Da Luz_spotdown.org" },
+    { id: 324, title: "Vai - Live At Estádio Da Luz", artist: "Calema", duration: "3:40", cover: "Live At Estádio Da Luz.jpg", src: "Vai - Live At Estádio Da Luz_spotdown.org" },
+    { id: 318, title: "Melhor Sem Mim - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "Melhor Sem Mim - Live At Estádio Da Luz_spotdown.org" },
+    { id: 301, title: "A Nossa Dança - Live At Estádio Da Luz", artist: "Calema", duration: "3:30", cover: "Live At Estádio Da Luz.jpg", src: "A Nossa Dança - Live At Estádio Da Luz_spotdown.org" },
+    { id: 315, title: "Leva Tudo - Live At Estádio Da Luz", artist: "Calema", duration: "3:25", cover: "Live At Estádio Da Luz.jpg", src: "Leva Tudo - Live At Estádio Da Luz_spotdown.org" },
+    { id: 316, title: "Maria Joana - Live At Estádio Da Luz", artist: "Calema", duration: "3:40", cover: "Live At Estádio Da Luz.jpg", src: "Maria Joana - Live At Estádio Da Luz_spotdown.org" }
 ];
 
 // ARTISTAS PORTUGUESES
@@ -143,6 +169,17 @@ const artists = [
                     201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 
                     211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 
                     221, 222, 223, 224, 225, 226, 227, 228, 229
+                ]
+            },
+            {
+                id: "calema-estadio-da-luz",
+                title: "Estádio da Luz (Ao Vivo)",
+                cover: "Live At Estádio Da Luz.jpg",
+                year: "2024",
+                songIds: [
+                    313, 321, 302, 319, 322, 304, 317, 312, 320, 305,
+                    314, 308, 303, 309, 307, 323, 311, 306, 310, 324,
+                    318, 301, 315, 316
                 ]
             }
         ]
