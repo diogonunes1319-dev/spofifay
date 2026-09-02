@@ -1,4 +1,4 @@
-[cite: 14]// Lista de Músicas Locais
+// Lista de Músicas Locais
 const songs = [
     { id: 1, title: "Where Have You Been", artist: "Rihanna", duration: "4:02", cover: "imagens/rihanna.jpg", src: "where-have-you-been.mp3" },
     { id: 2, title: "Pump It - Radio Edit", artist: "Javi Reina", duration: "3:45", cover: "imagens/pump-it.jpg", src: "pump-it.mp3" },
@@ -769,7 +769,7 @@ function pauseSong() {
     playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
 }
 
-// Executa a transição suave de som entre faixas (Corrigido)
+// Executa a transição suave de som entre faixas
 function triggerCrossfade() {
     if (isCrossfading || currentList.length === 0) return;
     isCrossfading = true;
@@ -799,12 +799,6 @@ function triggerCrossfade() {
         const stepTime = (crossfadeDuration * 1000) / totalSteps;
 
         const fadeInterval = setInterval(() => {
-            // Se o utilizador pausar ou trocar de música manualmente a meio do fade, aborta com segurança
-            if (!isPlaying || !isCrossfading) {
-                clearInterval(fadeInterval);
-                return;
-            }
-
             step++;
             const fadeOutFactor = Math.max(0, 1 - step / totalSteps);
             const fadeInFactor = Math.min(1, step / totalSteps);
@@ -815,14 +809,12 @@ function triggerCrossfade() {
             if (step >= totalSteps) {
                 clearInterval(fadeInterval);
                 audio.pause();
-                audio.currentTime = 0;
                 
                 // Transição do player B para ser o leitor principal
                 const temp = audio;
                 audio = audioB;
                 audioB = temp;
                 
-                // Reatribuir os listeners corretamente ao novo player principal
                 setupAudioListeners();
 
                 currentTrackIndex = nextTrackIndex;
