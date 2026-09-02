@@ -611,15 +611,14 @@ body {
     background-color: #fff;
     border-radius: 2px;
     width: 0%;
-    position: relative; /* Necessário para posicionar a bolinha */
+    position: relative;
     transition: background-color 0.2s ease;
 }
 
-/* Bolinha de progresso na ponta da barra */
 .progress-bar-fill::after {
     content: '';
     position: absolute;
-    right: -6px; /* Alinha o centro da bolinha à ponta da barra */
+    right: -6px;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -627,17 +626,16 @@ body {
     background-color: #fff;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Escondida por defeito */
+    opacity: 0;
     transition: opacity 0.2s ease;
 }
 
-/* Mostra a bolinha e muda a cor da barra para verde ao passar o rato */
 .progress-bar-container:hover .progress-bar-fill {
     background-color: #1db954;
 }
 
 .progress-bar-container:hover .progress-bar-fill::after {
-    opacity: 1; /* Exibe a bolinha */
+    opacity: 1;
 }
 
 .volume-container {
@@ -669,7 +667,7 @@ body {
         height: auto !important;
         min-height: 100vh !important;
         overflow: visible !important;
-        padding-bottom: 160px !important; /* Espaço para o player fixo não tapar o fim */
+        padding-bottom: 160px !important;
     }
 
     .sidebar {
@@ -722,7 +720,6 @@ body {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 
-    /* BARRA DE MÚSICA FIXA NO FUNDO NO TELEMÓVEL */
     .player-bar {
         position: fixed !important;
         bottom: 0 !important;
@@ -764,40 +761,33 @@ body {
 /* ==========================================================
    AJUSTE DE SCROLL HORIZONTAL APENAS NAS SECÇÕES (MOBILE)
    ========================================================== */
-
 @media (max-width: 768px) {
-    /* 1. Garantir que a página principal NÃO desliza na horizontal */
     html, body, .main-container, .content {
         max-width: 100vw !important;
         overflow-x: hidden !important;
     }
 
-    /* 2. Permitir Scroll Horizontal APENAS nas grelhas de Músicas e Artistas */
     .media-grid, .artists-grid {
-        display: flex !important;              /* Muda de grelha para linha flexível */
-        overflow-x: auto !important;          /* Ativa o deslize horizontal */
-        scroll-snap-type: x mandatory;         /* Transição suave ao arrastar */
-        padding-bottom: 12px;                  /* Espaço para o scroll não cortar */
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
         gap: 12px !important;
-        
-        /* Oculta a barra de scroll feia dos browsers */
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;                 /* Firefox */
+        scrollbar-width: none;
     }
 
-    /* Oculta a barra de scroll no Chrome/Safari/Edge */
     .media-grid::-webkit-scrollbar, 
     .artists-grid::-webkit-scrollbar {
         display: none;
     }
 
-    /* 3. Tamanho fixo dos cartões para não encolherem ao deslizar */
     .media-grid .spotify-card, 
     .artists-grid .artist-card,
     .artists-grid .spotify-card {
-        flex: 0 0 140px !important;            /* Largura fixa de cada cartão no telemóvel */
+        flex: 0 0 140px !important;
         width: 140px !important;
-        scroll-snap-align: start;              /* Prende cada cartão no ecra ao deslizar */
+        scroll-snap-align: start;
     }
 }
 
@@ -807,7 +797,6 @@ body {
     object-fit: contain;
 }
 
-/* Grelha exclusiva para a Playlist Portugal (2 por linha no telemóvel) */
 .portugal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -817,38 +806,28 @@ body {
 
 @media (max-width: 768px) {
     .portugal-grid {
-        grid-template-columns: repeat(2, 1fr) !important; /* Exatamente 2 colunas */
-        overflow-x: hidden !important;                     /* Sem scroll horizontal */
+        grid-template-columns: repeat(2, 1fr) !important;
+        overflow-x: hidden !important;
         gap: 12px;
         margin-bottom: 20px;
     }
     
     .portugal-grid .artist-card {
-        width: 100% !important;                             /* Ocupa a coluna inteira */
+        width: 100% !important;
         flex: none !important;
     }
 }
-/* 1. Por defeito, a bolinha existe na ponta da barra mas está invisível (opacity: 0) */
-.progress-bar-fill::after {
-    content: '';
-    position: absolute;
-    right: -6px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 12px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Escondida por defeito */
-    transition: opacity 0.2s ease;
+
+.artist-card.span-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 2. Quando o cursor fica por cima da linha, a bolinha aparece (opacity: 1) e a barra fica verde */
-.progress-bar-container:hover .progress-bar-fill {
-    background-color: #1db954;
-}
-
-.progress-bar-container:hover .progress-bar-fill::after {
-    opacity: 1; /* Aparece ao passar o cursor */
+.artist-card.span-2x2 .artist-card-img-wrapper {
+    width: 200px;
+    height: 200px;
 }

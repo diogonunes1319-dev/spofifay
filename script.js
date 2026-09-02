@@ -214,11 +214,29 @@ const songs = [
     { id: 904, title: "Meu Marido", artist: "Soraia Ramos", duration: "3:25", cover: "soraia_ramos.jpg", src: "Meu Marido_spotdown.org.mp3" },
     { id: 905, title: "Bai", artist: "Soraia Ramos", duration: "3:15", cover: "soraia_ramos.jpg", src: "Bai_spotdown.org.mp3" },
     { id: 906, title: "Kua Buaru", artist: "Soraia Ramos", duration: "3:10", cover: "soraia_ramos.jpg", src: "Kua Buaru_spotdown.org.mp3" },
-    { id: 907, title: "Nha Terra", artist: "Soraia Ramos", duration: "3:35", cover: "soraia_ramos.jpg", src: "Nha Terra_spotdown.org.mp3" }
+    { id: 907, title: "Nha Terra", artist: "Soraia Ramos", duration: "3:35", cover: "soraia_ramos.jpg", src: "Nha Terra_spotdown.org.mp3" },
+
+    // MÚSICAS - PROJETO VERÃO
+    { id: 1001, title: "Eu Mal Posso Esperar Para Ser Rei", artist: "Projeto Verão", duration: "3:20", cover: "projeto_verao_foto.jpg", src: "Eu Mal Posso Esperar Para Ser Rei_spotdown.org.mp3" },
+    { id: 1002, title: "One By One", artist: "Projeto Verão", duration: "3:15", cover: "projeto_verao_foto.jpg", src: "One By One_spotdown.org.mp3" },
+    { id: 1003, title: "Warm African Breeze", artist: "Projeto Verão", duration: "3:30", cover: "projeto_verao_foto.jpg", src: "Warm African Breeze_spotdown.org.mp3" },
+    { id: 1004, title: "Never Too Late", artist: "Projeto Verão", duration: "3:25", cover: "projeto_verao_foto.jpg", src: "Never Too Late_spotdown.org.mp3" },
+    { id: 1005, title: "I Always Wanted A Brother", artist: "Projeto Verão", duration: "3:10", cover: "projeto_verao_foto.jpg", src: "I Always Wanted A Brother_spotdown.org.mp3" },
+    { id: 1006, title: "Police", artist: "Projeto Verão", duration: "3:05", cover: "projeto_verao_foto.jpg", src: "Police_spotdown.org.mp3" },
+    { id: 1007, title: "Afrika", artist: "Projeto Verão", duration: "3:40", cover: "projeto_verao_foto.jpg", src: "Afrika_spotdown.org.mp3" },
+    { id: 1008, title: "He Lives in You", artist: "Projeto Verão", duration: "3:35", cover: "projeto_verao_foto.jpg", src: "He Lives in You_spotdown.org.mp3" },
+    { id: 1009, title: "Mbube", artist: "Projeto Verão", duration: "3:15", cover: "projeto_verao_foto.jpg", src: "Mbube_spotdown.org.mp3" },
+    { id: 1010, title: "Song of Freedom", artist: "Projeto Verão", duration: "3:30", cover: "projeto_verao_foto.jpg", src: "Song of Freedom_spotdown.org.mp3" },
+    { id: 1011, title: "Hakuna Matata", artist: "Projeto Verão", duration: "3:20", cover: "projeto_verao_foto.jpg", src: "Hakuna Matata_spotdown.org.mp3" },
+    { id: 1012, title: "Mbandkada Groove", artist: "Projeto Verão", duration: "3:10", cover: "projeto_verao_foto.jpg", src: "Mbandkada Groove_spotdown.org.mp3" },
+    { id: 1013, title: "Ciclo Sem Fim", artist: "Projeto Verão", duration: "3:50", cover: "projeto_verao_foto.jpg", src: "Ciclo Sem Fim_Nants' Ingonyama_spotdown.org.mp3" },
+    { id: 1014, title: "Papaoutai - Afro Soul", artist: "Projeto Verão", duration: "3:25", cover: "projeto_verao_foto.jpg", src: "Papaoutai - Afro Soul_spotdown.org.mp3" },
+    { id: 1015, title: "Quem Dorme é o Leão", artist: "Projeto Verão", duration: "3:15", cover: "projeto_verao_foto.jpg", src: "Quem Dorme é o Leão_spotdown.org.mp3" }
 ];
 
-// ARTISTAS PORTUGUESES
+// ARTISTAS PORTUGUESES (Projeto Verão em Primeiro lugar com gridSpan 2x2!)
 const artists = [
+    { id: 126, name: "Projeto Verão", photo: "projeto_verao_foto.jpg", songIds: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015], gridSpan: true },
     { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3, 59, 60, 61, 62, 63] },
     { id: 102, name: "Fábio Lagarto", photo: "fabio_lagarto.jpg", songIds: [4, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710] },
     { 
@@ -486,6 +504,8 @@ function openArtistView(artist, pushHistory = true) {
         const songsContainer = document.createElement('div');
         cardsContainer.appendChild(songsContainer);
         renderSongRows(artistSongs, songsContainer);
+    } else {
+        cardsContainer.innerHTML = `<p class="no-results" style="padding: 15px 0; color: #b3b3b3;">Nenhuma música disponível para este artista de momento.</p>`;
     }
 
     // 2. SEGUNDA SECÇÃO: Álbuns
@@ -585,7 +605,7 @@ function loadCards(songsToRender = songs) {
     renderSongRows(songsToRender, cardsContainer);
 }
 
-// Renderizar Grelha de Artistas
+// Renderizar Grelha de Artistas (com suporte para 2x2 no Projeto Verão)
 function renderArtistsGrid(artistsToRender = artists) {
     cardsContainer.className = 'portugal-grid';
     cardsContainer.innerHTML = '';
@@ -593,6 +613,11 @@ function renderArtistsGrid(artistsToRender = artists) {
     artistsToRender.forEach(artist => {
         const card = document.createElement('div');
         card.classList.add('artist-card');
+
+        // Adiciona a classe de dimensão 2x2 se o artista tiver gridSpan = true
+        if (artist.gridSpan) {
+            card.classList.add('span-2x2');
+        }
 
         card.innerHTML = `
             <div class="artist-card-img-wrapper">
