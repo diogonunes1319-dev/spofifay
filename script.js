@@ -53,7 +53,7 @@ const songs = [
     // Faixas Únicas Adicionais
     { id: 55, title: "Scatman (Aumenta O Som) [feat. Alok]", artist: "Scatman John, Alok", duration: "2:40", cover: "imagens/scatman.jpg", src: "Scatman (Aumenta O Som) [feat. Alok]_spotdown.org.mp3" },
     { id: 56, title: "Viagem - Johnny 500 Remix", artist: "Johnny 500", duration: "3:15", cover: "imagens/viagem.jpg", src: "Viagem - Johnny 500 Remix_spotdown.org.mp3" },
-    { id: 57, title: "Zookey - Radio Edit", artist: "Yves Larock", duration: "3:10", cover: "imagens/zookey.jpg", src: "Zookey - Radio Edit.mp3" },
+    { id: 57, title: "Zookey - Radio Edit", artist: "Yves Larock", duration: "3:10", cover: "imagens/zookey.jpg", src: "Zookey - Radio Edit_spotdown.org.mp3" },
 
     // Músicas - Doce
     { id: 59, title: "Ali-Babá", artist: "Doce", duration: "3:10", cover: "imagens/doce.jpg", src: "Ali-Babá_spotdown.org.mp3" },
@@ -295,12 +295,6 @@ let currentTrackIndex = 0; // Índice da música na currentList
 let isPlaying = false;
 let activePlaylistId = null;
 
-// Lógica de Crossfade
-let isCrossfadeActive = false;
-let crossfadeDuration = 5; // Duração do crossfade em segundos
-let isCrossfading = false;
-let audioB = new Audio(); // Player secundário para gerir a transição suave
-
 // Histórico de Navegação
 let navigationHistory = [];
 let historyIndex = -1;
@@ -308,11 +302,10 @@ let isNavigatingHistory = false;
 
 // Elementos do DOM
 const cardsContainer = document.getElementById('cards-container');
-let audio = new Audio(); // Player principal
+const audio = document.getElementById('audio-player');
 const playBtn = document.getElementById('play-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
-const crossfadeBtn = document.getElementById('crossfade-btn');
 const songTitle = document.getElementById('player-title');
 const songArtist = document.getElementById('player-artist');
 const progressBar = document.getElementById('progress-bar');
@@ -726,27 +719,12 @@ searchInput.addEventListener('input', (e) => {
     }
 });
 
-// Alternar botão de Crossfade
-if (crossfadeBtn) {
-    crossfadeBtn.addEventListener('click', () => {
-        isCrossfadeActive = !isCrossfadeActive;
-        if (isCrossfadeActive) {
-            crossfadeBtn.classList.add('active');
-            crossfadeBtn.style.color = '#1db954';
-        } else {
-            crossfadeBtn.classList.remove('active');
-            crossfadeBtn.style.color = '#b3b3b3';
-        }
-    });
-}
-
 // Audio Player Controls
 function loadSong(song) {
     if (!song) return;
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
     audio.src = song.src;
-    audio.volume = parseFloat(volumeSlider.value);
 }
 
 function playSong() {
@@ -764,70 +742,7 @@ function playSong() {
 function pauseSong() {
     isPlaying = false;
     audio.pause();
-    audioB.pause();
-    isCrossfading = false;
     playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
-}
-
-// Executa a transição suave de som entre faixas
-function triggerCrossfade() {
-    if (isCrossfading || currentList.length === 0) return;
-    isCrossfading = true;
-
-    // Calcular próxima música
-    let nextTrackIndex = currentTrackIndex + 1;
-    const isProjetoVerao = currentList.every(song => song.artist === "Projeto Verão");
-    if (nextTrackIndex >= currentList.length) {
-        if (isProjetoVerao) {
-            nextTrackIndex = 0;
-        } else {
-            isCrossfading = false;
-            return;
-        }
-    }
-
-    const nextSong = currentList[nextTrackIndex];
-
-    // Configurar o leitor secundário (audioB) com a próxima faixa
-    audioB.src = nextSong.src;
-    audioB.volume = 0;
-    const targetVolume = parseFloat(volumeSlider.value);
-
-    audioB.play().then(() => {
-        let step = 0;
-        const totalSteps = 20; // 20 passos ao longo dos 5 segundos (intervalo de 250ms)
-        const stepTime = (crossfadeDuration * 1000) / totalSteps;
-
-        const fadeInterval = setInterval(() => {
-            step++;
-            const fadeOutFactor = Math.max(0, 1 - step / totalSteps);
-            const fadeInFactor = Math.min(1, step / totalSteps);
-
-            audio.volume = targetVolume * fadeOutFactor;
-            audioB.volume = targetVolume * fadeInFactor;
-
-            if (step >= totalSteps) {
-                clearInterval(fadeInterval);
-                audio.pause();
-                
-                // Transição do player B para ser o leitor principal
-                const temp = audio;
-                audio = audioB;
-                audioB = temp;
-                
-                setupAudioListeners();
-
-                currentTrackIndex = nextTrackIndex;
-                songTitle.innerText = nextSong.title;
-                songArtist.innerText = nextSong.artist;
-                audio.volume = targetVolume;
-                isCrossfading = false;
-            }
-        }, stepTime);
-    }).catch(err => {
-        console.error("Erro no Crossfade:", err);
-        isCrossfading = false;
-    });
 }
 
 playBtn.addEventListener('click', () => {
@@ -841,8 +756,6 @@ playBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
     if (currentList.length === 0) return;
-    isCrossfading = false;
-    audioB.pause();
     currentTrackIndex--;
     if (currentTrackIndex < 0) currentTrackIndex = currentList.length - 1;
     loadSong(currentList[currentTrackIndex]);
@@ -851,15 +764,13 @@ prevBtn.addEventListener('click', () => {
 
 nextBtn.addEventListener('click', () => {
     if (currentList.length === 0) return;
-    isCrossfading = false;
-    audioB.pause();
     currentTrackIndex++;
     if (currentTrackIndex >= currentList.length) currentTrackIndex = 0;
     loadSong(currentList[currentTrackIndex]);
     playSong();
 });
 
-function handleTimeUpdate(e) {
+audio.addEventListener('timeupdate', (e) => {
     const { duration, currentTime } = e.srcElement;
     if (duration) {
         const progressPercent = (currentTime / duration) * 100;
@@ -872,16 +783,23 @@ function handleTimeUpdate(e) {
         const totalMinutes = Math.floor(duration / 60);
         const totalSeconds = Math.floor(duration % 60);
         totalDurationEl.innerText = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`;
-
-        // Iniciar Crossfade quando faltarem 5 segundos para o fim da música
-        if (isCrossfadeActive && !isCrossfading && duration - currentTime <= crossfadeDuration && duration > crossfadeDuration) {
-            triggerCrossfade();
-        }
     }
-}
+});
 
-function handleSongEnded() {
-    if (currentList.length === 0 || isCrossfading) return;
+progressContainer.addEventListener('click', (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    if (duration) audio.currentTime = (clickX / width) * duration;
+});
+
+volumeSlider.addEventListener('input', (e) => {
+    audio.volume = e.target.value;
+});
+
+// Evento quando a música termina
+audio.addEventListener('ended', () => {
+    if (currentList.length === 0) return;
 
     // Verifica se é a playlist/perfil do Projeto Verão
     const isProjetoVerao = currentList.every(song => song.artist === "Projeto Verão");
@@ -897,30 +815,6 @@ function handleSongEnded() {
     } else {
         // Nas restantes playlists, simplesmente avança normalmente
         nextBtn.click();
-    }
-}
-
-function setupAudioListeners() {
-    audio.removeEventListener('timeupdate', handleTimeUpdate);
-    audio.removeEventListener('ended', handleSongEnded);
-
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('ended', handleSongEnded);
-}
-
-setupAudioListeners();
-
-progressContainer.addEventListener('click', (e) => {
-    const width = progressContainer.clientWidth;
-    const clickX = e.offsetX;
-    const duration = audio.duration;
-    if (duration) audio.currentTime = (clickX / width) * duration;
-});
-
-volumeSlider.addEventListener('input', (e) => {
-    audio.volume = e.target.value;
-    if (isCrossfading) {
-        audioB.volume = e.target.value;
     }
 });
 
