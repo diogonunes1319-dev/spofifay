@@ -797,8 +797,25 @@ volumeSlider.addEventListener('input', (e) => {
     audio.volume = e.target.value;
 });
 
+// Evento quando a música termina
 audio.addEventListener('ended', () => {
-    nextBtn.click();
+    if (currentList.length === 0) return;
+
+    // Verifica se é a playlist/perfil do Projeto Verão
+    const isProjetoVerao = currentList.every(song => song.artist === "Projeto Verão");
+
+    if (isProjetoVerao) {
+        currentTrackIndex++;
+        // Se chegou ao fim da playlist do Projeto Verão, volta ao início (loop)
+        if (currentTrackIndex >= currentList.length) {
+            currentTrackIndex = 0;
+        }
+        loadSong(currentList[currentTrackIndex]);
+        playSong();
+    } else {
+        // Nas restantes playlists, simplesmente avança normalmente
+        nextBtn.click();
+    }
 });
 
 // DESATIVAR ZOOM DA PÁGINA
