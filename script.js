@@ -229,12 +229,12 @@ const songs = [
     { id: 1010, title: "Song of Freedom", artist: "Projeto Verão", duration: "3:30", cover: "projeto_verao_foto.jpg", src: "Song of Freedom_spotdown.org.mp3" },
     { id: 1011, title: "Hakuna Matata", artist: "Projeto Verão", duration: "3:20", cover: "projeto_verao_foto.jpg", src: "Hakuna Matata_spotdown.org.mp3" },
     { id: 1012, title: "Mbandkada Groove", artist: "Projeto Verão", duration: "3:10", cover: "projeto_verao_foto.jpg", src: "Mbandkada Groove_spotdown.org.mp3" },
-    { id: 1013, title: "Ciclo Sem Fim", artist: "Projeto Verão", duration: "3:50", cover: "projeto_verao_foto.jpg", src: "Ciclo Sem Fim_Nants' Ingonyama_spotdown.org.mp3" },
+    { id: 1013, title: "Ciclo Sem Fim_Nants' Ingonyama", artist: "Projeto Verão", duration: "3:50", cover: "projeto_verao_foto.jpg", src: "Ciclo Sem Fim_Nants' Ingonyama_spotdown.org.mp3" },
     { id: 1014, title: "Papaoutai - Afro Soul", artist: "Projeto Verão", duration: "3:25", cover: "projeto_verao_foto.jpg", src: "Papaoutai - Afro Soul_spotdown.org.mp3" },
     { id: 1015, title: "Quem Dorme é o Leão", artist: "Projeto Verão", duration: "3:15", cover: "projeto_verao_foto.jpg", src: "Quem Dorme é o Leão_spotdown.org.mp3" }
 ];
 
-// ARTISTAS PORTUGUESES (Projeto Verão em Primeiro lugar com gridSpan 2x2!)
+// ARTISTAS PORTUGUESES
 const artists = [
     { id: 126, name: "Projeto Verão", photo: "projeto_verao_foto.jpg", songIds: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015], gridSpan: true },
     { id: 101, name: "Doce", photo: "doce.jpg", songIds: [3, 59, 60, 61, 62, 63] },
@@ -290,9 +290,9 @@ const playlists = [
 ];
 
 // Estado da Aplicação
-let songIndex = 0;
-let isPlaying = false;
 let currentList = [...songs];
+let currentTrackIndex = 0; // Índice da música na currentList
+let isPlaying = false;
 let activePlaylistId = null;
 
 // Histórico de Navegação
@@ -383,7 +383,7 @@ btnNavForward.addEventListener('click', () => {
     }
 });
 
-// VISTA DE INÍCIO ESTILO SPOFIFAY
+// VISTA DE INÍCIO
 function renderHomeView() {
     cardsContainer.className = 'spotify-home';
     sectionTitle.innerText = getGreeting();
@@ -431,7 +431,6 @@ function renderHomeView() {
     const songsGrid = document.getElementById('featured-songs-grid');
     const sampleSongs = songs.slice(0, 6);
     sampleSongs.forEach((song) => {
-        const originalIndex = songs.findIndex(s => s.id === song.id);
         const card = document.createElement('div');
         card.className = 'spotify-card';
         card.innerHTML = `
@@ -445,8 +444,9 @@ function renderHomeView() {
             </div>
         `;
         card.addEventListener('click', () => {
-            songIndex = originalIndex;
-            loadSong(songs[songIndex]);
+            currentList = sampleSongs;
+            currentTrackIndex = sampleSongs.findIndex(s => s.id === song.id);
+            loadSong(currentList[currentTrackIndex]);
             playSong();
         });
         songsGrid.appendChild(card);
@@ -474,7 +474,7 @@ function renderHomeView() {
     });
 }
 
-// Abrir Vista do Artista (1. Músicas -> 2. Álbuns)
+// Abrir Vista do Artista
 function openArtistView(artist, pushHistory = true) {
     if (!artist) return;
     sectionTitle.innerText = artist.name;
@@ -491,7 +491,6 @@ function openArtistView(artist, pushHistory = true) {
     cardsContainer.className = 'song-list';
     cardsContainer.innerHTML = '';
 
-    // 1. PRIMEIRA SECÇÃO: Músicas soltas do Artista
     const albumSongIds = artist.albums ? artist.albums.flatMap(a => a.songIds) : [];
     const artistSongs = songs.filter(s => artist.songIds.includes(s.id) && !albumSongIds.includes(s.id));
 
@@ -508,7 +507,6 @@ function openArtistView(artist, pushHistory = true) {
         cardsContainer.innerHTML = `<p class="no-results" style="padding: 15px 0; color: #b3b3b3;">Nenhuma música disponível para este artista de momento.</p>`;
     }
 
-    // 2. SEGUNDA SECÇÃO: Álbuns
     if (artist.albums && artist.albums.length > 0) {
         const albumsHeader = document.createElement('h3');
         albumsHeader.innerText = "Álbuns";
@@ -566,18 +564,16 @@ function renderSongRows(songsToRender, container) {
     }
 
     songsToRender.forEach((song, index) => {
-        const originalIndex = songs.findIndex(s => s.id === song.id);
-
         const row = document.createElement('div');
         row.classList.add('song-row');
         
-        if (originalIndex === songIndex && isPlaying) {
+        if (currentList[currentTrackIndex] && currentList[currentTrackIndex].id === song.id && isPlaying) {
             row.classList.add('playing');
         }
 
         row.innerHTML = `
             <div class="song-number">${index + 1}</div>
-            <img class="song-row-img" src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200?random=${originalIndex}'">
+            <img class="song-row-img" src="${song.cover}" alt="${song.title}" onerror="this.src='https://picsum.photos/200?random=${song.id}'">
             <div class="song-details">
                 <h4>${song.title}</h4>
                 <div class="artist-info">
@@ -589,8 +585,8 @@ function renderSongRows(songsToRender, container) {
 
         row.addEventListener('click', () => {
             currentList = songsToRender;
-            songIndex = originalIndex;
-            loadSong(songs[songIndex]);
+            currentTrackIndex = index;
+            loadSong(currentList[currentTrackIndex]);
             playSong();
         });
 
@@ -605,7 +601,7 @@ function loadCards(songsToRender = songs) {
     renderSongRows(songsToRender, cardsContainer);
 }
 
-// Renderizar Grelha de Artistas (com suporte para 2x2 no Projeto Verão)
+// Renderizar Grelha de Artistas
 function renderArtistsGrid(artistsToRender = artists) {
     cardsContainer.className = 'portugal-grid';
     cardsContainer.innerHTML = '';
@@ -614,7 +610,6 @@ function renderArtistsGrid(artistsToRender = artists) {
         const card = document.createElement('div');
         card.classList.add('artist-card');
 
-        // Adiciona a classe de dimensão 2x2 se o artista tiver gridSpan = true
         if (artist.gridSpan) {
             card.classList.add('span-2x2');
         }
@@ -726,6 +721,7 @@ searchInput.addEventListener('input', (e) => {
 
 // Audio Player Controls
 function loadSong(song) {
+    if (!song) return;
     songTitle.innerText = song.title;
     songArtist.innerText = song.artist;
     audio.src = song.src;
@@ -737,7 +733,7 @@ function playSong() {
         playBtn.innerHTML = `<i class="fa-solid fa-circle-pause"></i>`;
     }).catch(error => {
         console.error("Erro ao tocar:", error);
-        alert(`O ficheiro "${songs[songIndex].src}" não foi encontrado na pasta.`);
+        alert(`O ficheiro "${currentList[currentTrackIndex]?.src}" não foi encontrado na pasta.`);
         isPlaying = false;
         playBtn.innerHTML = `<i class="fa-solid fa-circle-play"></i>`;
     });
@@ -753,22 +749,24 @@ playBtn.addEventListener('click', () => {
     if (isPlaying) {
         pauseSong();
     } else {
-        if (!audio.src || audio.src === "") loadSong(songs[songIndex]);
+        if (!audio.src || audio.src === "") loadSong(currentList[currentTrackIndex]);
         playSong();
     }
 });
 
 prevBtn.addEventListener('click', () => {
-    songIndex--;
-    if (songIndex < 0) songIndex = songs.length - 1;
-    loadSong(songs[songIndex]);
+    if (currentList.length === 0) return;
+    currentTrackIndex--;
+    if (currentTrackIndex < 0) currentTrackIndex = currentList.length - 1;
+    loadSong(currentList[currentTrackIndex]);
     playSong();
 });
 
 nextBtn.addEventListener('click', () => {
-    songIndex++;
-    if (songIndex >= songs.length) songIndex = 0;
-    loadSong(songs[songIndex]);
+    if (currentList.length === 0) return;
+    currentTrackIndex++;
+    if (currentTrackIndex >= currentList.length) currentTrackIndex = 0;
+    loadSong(currentList[currentTrackIndex]);
     playSong();
 });
 
@@ -818,7 +816,7 @@ document.addEventListener('wheel', (e) => {
 
 // Init
 renderPlaylists();
-loadSong(songs[songIndex]);
+loadSong(songs[0]);
 
 btnInicio.classList.add('active');
 btnBuscar.classList.remove('active');
